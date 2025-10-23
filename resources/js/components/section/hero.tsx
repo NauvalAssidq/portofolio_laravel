@@ -41,7 +41,7 @@ export default function Home() {
                         <h1 className="text-5xl font-semibold text-gray-900 mb-2">
                             Crafting Stunning Apps & Websites
                         </h1>
-                        <h2 className="text-4xl font-semibold text-indigo-600 mb-6">
+                        <h2 className="text-4xl font-semibold text-red-600 mb-6">
                             With Details, and Precision.
                         </h2>
                         <p className="text-md text-gray-600 mb-8">
