@@ -10,6 +10,9 @@ import {
     SiKotlin,
     SiRuby,
     SiMysql,
+    SiLaragon,
+    SiCodeigniter,
+    SiPhp
 } from "react-icons/si";
 
 
@@ -34,46 +37,34 @@ export const languages = [
         icon: <SiPython className="text-yellow-300 text-3xl" />,
     },
     {
-        name: "Go",
-        tag: "Systems • Cloud",
-        desc: "Simple, fast, great for services",
-        icon: <SiGo className="text-cyan-500 text-3xl" />,
-    },
-    {
-        name: "Rust",
-        tag: "Systems • Safe",
-        desc: "Memory safety with zero-cost abstractions",
-        icon: <SiRust className="text-orange-600 text-3xl" />,
-    },
-    {
-        name: "C++",
-        tag: "Systems • Perf",
-        desc: "High performance, close to metal",
-        icon: <SiCplusplus className="text-blue-600 text-3xl" />,
-    },
-    {
-        name: "Swift",
-        tag: "Apple • Apps",
-        desc: "iOS & macOS with modern ergonomics",
-        icon: <SiSwift className="text-orange-500 text-3xl" />,
-    },
-    {
         name: "Kotlin",
         tag: "Android • JVM",
         desc: "Concise, safe alternative to Java",
         icon: <SiKotlin className="text-pink-500 text-3xl" />,
     },
     {
-        name: "Ruby",
-        tag: "Web • Scripting",
-        desc: "Productive, expressive, great DX",
-        icon: <SiRuby className="text-red-500 text-3xl" />,
-    },
-    {
         name: "SQL",
         tag: "Databases",
         desc: "Query, join, and aggregate data",
         icon: <SiMysql className="text-sky-600 text-3xl" />,
+    },
+    {
+        name: "Laragon",
+        tag: "Environment",
+        desc: "Php based development environment",
+        icon: <SiLaragon className="text-blue-700 text-3xl" />,
+    },
+    {
+        name: "Php",
+        tag: "Static • Web",
+        desc: "Php based development environment",
+        icon: <SiPhp className="text-sky-800 text-3xl" />,
+    },
+    {
+        name: "Code Igniter",
+        tag: "MVC • Framework",
+        desc: "Simple yet powerfull php framework",
+        icon: <SiCodeigniter className="text-amber-600 text-3xl" />,
     },
 ];
 

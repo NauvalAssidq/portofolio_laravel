@@ -6,6 +6,12 @@ import { createInertiaApp } from '@inertiajs/react';
 import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers';
 
 // @ts-ignore
+import { route } from 'ziggy-js';
+
+// @ts-ignore
+window.route = route;
+
+// @ts-ignore
 const appName = import.meta.env.VITE_APP_NAME || 'Laravel';
 
 createInertiaApp({

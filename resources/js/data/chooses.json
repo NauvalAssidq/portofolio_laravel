@@ -1,0 +1,38 @@
+[
+    {
+        "id": 1,
+        "title": "Product Vision",
+        "description": "I don't just write code; I think about the user journey. I build with a clear vision for how the product should feel, interact, and solve real problems.",
+        "icon": "Eye",
+        "position": 0,
+        "created_at": "2026-03-11T19:46:11.000000Z",
+        "updated_at": "2026-03-11T19:46:11.000000Z"
+    },
+    {
+        "id": 2,
+        "title": "Detail Obsessed",
+        "description": "I sweat the small stuff. From pixel-perfect spacing to subtle micro-interactions, I catch the visual bugs that others miss.",
+        "icon": "ScanSearch",
+        "position": 1,
+        "created_at": "2026-03-11T19:46:11.000000Z",
+        "updated_at": "2026-03-11T19:46:11.000000Z"
+    },
+    {
+        "id": 3,
+        "title": "Technical Depth",
+        "description": "Understanding the 'why' behind the 'how'. I architect solutions that are scalable, maintainable, and built on modern best practices.",
+        "icon": "Code2",
+        "position": 2,
+        "created_at": "2026-03-11T19:46:11.000000Z",
+        "updated_at": "2026-03-11T19:46:11.000000Z"
+    },
+    {
+        "id": 4,
+        "title": "Uncompromising Standards",
+        "description": "I'm persistent and not satisfied with \"good enough.\" My goal is always a polished, bug-free final release that exceeds expectations.",
+        "icon": "CheckCircle",
+        "position": 3,
+        "created_at": "2026-03-11T19:46:11.000000Z",
+        "updated_at": "2026-03-11T19:46:11.000000Z"
+    }
+]

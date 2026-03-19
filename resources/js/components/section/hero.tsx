@@ -1,104 +1,147 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from "react";
 import { ArrowRight } from "lucide-react";
-import { Marquee } from '@/components/ui/marquee'
-import Navbar from "@/components/section/nav"
-import { languages, LanguageMarquee } from '@/components/hero/languagemq'
+import { Marquee } from "@/components/ui/marquee";
+import { languages, LanguageMarquee } from "@/components/hero/languagemq";
+import { cn } from "@/lib/utils";
+import { Highlighter } from "@/components/ui/highlighter";
+import { InteractiveGrid } from "@/components/hero/InteractiveGrid";
+import { MagneticText } from "@/components/ui/MagneticText";
 
-export default function Home() {
-    const [isScrolled, setIsScrolled] = useState(false);
+export default function Hero() {
+    const sectionRef = useRef<HTMLElement | null>(null);
+    const [isInView, setIsInView] = useState(false);
+
     useEffect(() => {
-        const handleScroll = () => {
-            setIsScrolled(window.scrollY > 10);
-        };
-        window.addEventListener('scroll', handleScroll);
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting) {
+                    setIsInView(true);
+                    observer.unobserve(entry.target);
+                }
+            },
+            { threshold: 0.1 }
+        );
+        const currentRef = sectionRef.current;
+        if (currentRef) {
+            observer.observe(currentRef);
+        }
         return () => {
-            window.removeEventListener('scroll', handleScroll);
+            if (currentRef) {
+                observer.unobserve(currentRef);
+            }
         };
     }, []);
+
 
     const first = languages.slice(0, Math.ceil(languages.length / 2));
     const second = languages.slice(Math.ceil(languages.length / 2));
 
     return (
-        <>
-            <Navbar isScrolled={isScrolled} />
-            <section className="relative min-h-screen flex items-center justify-center bg-white py-12 px-4 sm:px-6 lg:px-8">
-                <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)] dark:bg-black"></div>
-                <div className="w-7xl mx-auto z-10 overflow-visible">
-                    <div className="flex">
-                        <div className="inline-flex px-3 py-2 gap-2 items-center rounded-full text-sm font-medium bg-white border border-gray-200 mb-8">
-                            <span className="relative flex h-3 w-3">
-                                <span className="absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75 animate-ping"></span>
-                                <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
+        <section
+            ref={sectionRef}
+            className="relative min-h-dvh flex items-center justify-center bg-[#fafafa] pt-32 pb-20 sm:py-28 px-4 sm:px-6 lg:px-8 overflow-hidden"
+        >
+        <InteractiveGrid />
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-indigo-500/50 to-transparent" />
+            <div className="max-w-7xl mx-auto z-10 w-full">
+                <div className="text-center">
+                    <div
+                        className={cn(
+                            "flex justify-center transition-all duration-1000 ease-out",
+                            isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+                        )}
+                        style={{ transitionDelay: isInView ? '200ms' : '0ms' }}
+                    >
+                        <div className="inline-flex px-4 py-2 gap-2 items-center rounded-full text-xs sm:text-sm font-medium bg-white border border-gray-200/80 shadow-sm mb-8 sm:mb-10">
+                            <span className="relative flex h-2 w-2">
+                                <span className="absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75 animate-ping" />
+                                <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500" />
                             </span>
-                            <span>
-                                Only 2 Spots Available, Starting From IDR 1,500K
-                            </span>
+                            <span className="text-gray-600">Currently open to work, DM me!</span>
                         </div>
                     </div>
-
-                    <div className="overflow-visible">
-                        <h1 className="text-5xl font-semibold text-gray-900 mb-2">
-                            Crafting Stunning Apps & Websites
+                    <MagneticText strength={30}>
+                        <h1
+                            className={cn(
+                                "font-serif text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-gray-900 mb-4 text-center leading-[1.1]",
+                                "transition-all duration-1000 ease-out",
+                                isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+                            )}
+                            style={{ transitionDelay: isInView ? '400ms' : '0ms' }}
+                        >
+                            Craft Stunning{" "}
+                            <Highlighter action="circle" color="#87CEFA" isView={!isInView}>
+                                Apps
+                            </Highlighter>
+                            {" "}  &amp; {" "}
+                            <Highlighter action="highlight" color="#87CEFA" isView={!isInView}>
+                                Websites
+                            </Highlighter>
                         </h1>
-                        <h2 className="text-4xl font-semibold text-red-600 mb-6">
+                    </MagneticText>
+                    
+                    <MagneticText strength={20}>
+                        <h2
+                            className={cn(
+                                "font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-indigo-600 mb-6 sm:mb-8 text-center leading-[1.1]",
+                                "transition-all duration-1000 ease-out",
+                                isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+                            )}
+                            style={{ transitionDelay: isInView ? '600ms' : '0ms' }}
+                        >
                             With Details, and Precision.
                         </h2>
-                        <p className="text-md text-gray-600 mb-8">
-                            Bring your vision to life with me, from design to launch, in record time.
-                        </p>
-
-                        <div className="overflow-visible flex flex-col sm:flex-row gap-4 mb-16">
-                            <div
-                                className="
-                                    group inline-flex items-center gap-6 justify-center
-                                    py-2 px-4 rounded-full text-base font-medium
-                                    text-white bg-indigo-600
-                                    border border-indigo-600/40
-                                    shadow-[0_0_20px_rgba(79,70,229,0.25),_0_2px_4px_rgba(0,0,0,0.05)]
-                                    hover:bg-indigo-700
-                                    hover:shadow-[0_0_30px_rgba(79,70,229,0.55),_0_4px_8px_rgba(0,0,0,0.1)]
-                                    transition-all duration-300 ease-in-out
-                                    backdrop-blur-sm
-                                  "
-                            >
-                                <a className="pl-1">See Plans & Pricing</a>
-                                <div
-                                    className="
-                                      p-1 overflow-hidden border border-indigo-300/40
-                                      bg-white/40 backdrop-blur-xl rounded-full
-                                      shadow-[0_0_6px_rgba(255,255,255,0.4)]
-                                      group-hover:shadow-[0_0_10px_rgba(255,255,255,0.6)]
-                                      transition-transform duration-300 ease-in-out group-hover:rotate-45
-                                    "
-                                >
-                                    <ArrowRight size={18} className="text-white" />
-                                </div>
-                            </div>
-
-                            <div
-                                // href="#"
-                                className="group inline-flex rounded-full gap-6 items-center justify-center py-2 px-3 border border-gray-300 text-base font-medium text-gray-700 bg-white hover:bg-gray-50 transition duration-150 ease-in-out">
-                                <a className="pl-1">
-                                    Schedule a Call
-                                </a>
-                                <div className="p-1 overflow-hidden border border-gray-200 bg-white/40 backdrop-blur-xl rounded-full shadow-md hover:shadow-lg transition-transform duration-300 ease-in-out group-hover:rotate-45">
-                                    <ArrowRight size={18} className="text-gray-600" />
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="max-w-2xl relative mb-8">
-                            <Marquee pauseOnHover className="relative z-0 [--duration:20s]">
-                                {first.map((l) => LanguageMarquee(l))}
-                            </Marquee>
-                            <div className="pointer-events-none absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-white dark:from-black to-transparent z-20" />
-                            <div className="pointer-events-none absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-white dark:from-black to-transparent z-20" />
-                        </div>
+                    </MagneticText>
+                    <p
+                        className={cn(
+                            "text-lg sm:text-xl text-gray-500 mb-10 max-w-xl text-center mx-auto leading-relaxed",
+                            "transition-all duration-1000 ease-out",
+                            isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+                        )}
+                        style={{ transitionDelay: isInView ? '800ms' : '0ms' }}
+                    >
+                        Bring your vision to life with me, from design to launch, in record time.
+                    </p>
+                    <div
+                        className={cn(
+                            "flex flex-col sm:flex-row gap-4 mb-12 sm:mb-16 items-stretch sm:items-center justify-center",
+                            "transition-all duration-1000 ease-out",
+                            isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+                        )}
+                        style={{ transitionDelay: isInView ? '1000ms' : '0ms' }}
+                    >
+                        <a
+                            href="#showcase"
+                            className="group inline-flex items-center justify-center gap-3 py-4 px-8 rounded-full text-base font-medium text-white bg-gray-900 hover:bg-gray-800 transition-colors duration-200"
+                        >
+                            <span>View Projects</span>
+                            <ArrowRight size={18} className="transition-transform duration-200 group-hover:translate-x-1" />
+                        </a>
+                        <a
+                            href="#contact"
+                            className="group inline-flex items-center justify-center gap-3 py-4 px-8 rounded-full text-base font-medium text-gray-600 bg-white border border-gray-200 hover:border-gray-300 transition-colors duration-200"
+                        >
+                            <span>Schedule a Call</span>
+                            <ArrowRight size={18} className="transition-transform duration-200 group-hover:translate-x-1" />
+                        </a>
+                    </div>
+                    <div
+                        className={cn(
+                            "relative",
+                            "transition-all duration-1000 ease-out",
+                            isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+                        )}
+                        style={{ transitionDelay: isInView ? '1200ms' : '0ms' }}
+                    >
+                        <Marquee pauseOnHover className="[--duration:25s]">
+                            {first.map((l) => LanguageMarquee(l))}
+                            {second.map((l) => LanguageMarquee(l))}
+                        </Marquee>
+                        <div className="pointer-events-none absolute inset-y-0 left-0 w-24 sm:w-32 bg-gradient-to-r from-[#fafafa] to-transparent z-10" />
+                        <div className="pointer-events-none absolute inset-y-0 right-0 w-24 sm:w-32 bg-gradient-to-l from-[#fafafa] to-transparent z-10" />
                     </div>
                 </div>
-            </section>
-        </>
+            </div>
+        </section>
     );
 }
-
