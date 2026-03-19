@@ -10,6 +10,7 @@ interface PricingPlan {
     price_monthly: string | null;
     price_annually: string | null;
     currency: string;
+    period: string;
     features: string[];
     cta_text: string;
     cta_link: string | null;
@@ -142,6 +143,7 @@ export const Pricing = ({ plans = [] }: { plans: PricingPlan[] }) => {
                                                 "text-sm",
                                                 plan.is_popular ? "text-gray-400" : "text-gray-500"
                                             )}>
+                                                {plan.period}
                                             </span>
                                         </div>
                                     ) : (
