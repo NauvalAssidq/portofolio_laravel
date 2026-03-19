@@ -1,0 +1,8 @@
+/vendor
+/node_modules
+/.idea
+/.git
+/docker
+docker-compose.yml
+Dockerfile
+.dockerignore
