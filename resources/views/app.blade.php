@@ -20,7 +20,7 @@
     <meta property="og:url" content="https://beethoval.vercel.app">
     <meta property="og:title" content="Beethoval Portfolio">
     <meta property="og:description" content="Portfolio showcasing premium web development and design services by beethoval.dev.">
-    <meta property="og:image" content="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80&w=1200">
+    <meta property="og:image" content="https://raw.githubusercontent.com/NauvalAssidq/portofolio_laravel/refs/heads/main/public/storage/image.png">
     <meta property="og:image:alt" content="Portfolio">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -30,7 +30,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Beethoval Portfolio">
     <meta name="twitter:description" content="Portfolio showcasing premium web development and design services by beethoval.dev.">
-    <meta name="twitter:image" content="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80&w=1200">
+    <meta name="twitter:image" content="https://raw.githubusercontent.com/NauvalAssidq/portofolio_laravel/refs/heads/main/public/storage/image.png">
 
     <meta name="theme-color" content="#0a0a0a">
 

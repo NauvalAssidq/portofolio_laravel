@@ -2,12 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
-import { usePage } from "@inertiajs/react";
 import {
-    CreditCardIcon,
-    Sparkles,
-
-    MessageCircle,
     Menu,
     X,
     ArrowRight,
@@ -95,144 +90,175 @@ const Navbar = ({ isScrolled }: { isScrolled: boolean }) => {
     };
 
     return (
-        <header
-            className={cn(
-                "fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out",
-                "py-3"
-            )}
-        >
-            <nav
+        <>
+            <div
+                id="mobile-nav"
+                role="dialog"
+                aria-modal="true"
                 className={cn(
-                    "relative mx-auto flex items-center justify-between px-4 sm:px-6 lg:px-8",
-                    "transition-all duration-300 ease-in-out",
-                    "w-full max-w-7xl bg-transparent border-b border-transparent",
-                    isScrolled && [
-                        "py-3 px-3",
-                        "max-w-3xl",
-                        "rounded-md",
-                        "border border-gray-200/60",
-                        "bg-white/70",
-                        "shadow-md",
-                        "backdrop-blur-lg",
-                    ]
+                    "fixed inset-0 z-[100] md:hidden bg-[#fafafa]",
+                    "flex flex-col",
+                    "transition-all duration-500 ease-[cubic-bezier(0.85,0,0.15,1)]",
+                    mobileOpen ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-8 pointer-events-none"
                 )}
             >
-                <a
-                    href="#"
-                    className={cn(
-                        "font-serif text-xl text-gray-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 rounded-md",
-                        isScrolled ? "text-lg" : "text-xl",
-                        "transition-all duration-300 ease-in-out"
-                    )}
-                >
-                    @Beethoval.dev
-                </a>
+                <div className="flex items-center justify-between px-4 sm:px-6 py-[14px]">
+                    <a
+                        href="#"
+                        onClick={() => setMobileOpen(false)}
+                        className="font-serif text-xl text-gray-900"
+                    >
+                        @Beethoval.dev
+                    </a>
+                    <button
+                        type="button"
+                        onClick={() => setMobileOpen(false)}
+                        className="inline-flex items-center justify-center p-2 text-gray-900 focus:outline-none"
+                    >
+                        <X className="w-5 h-5" />
+                    </button>
+                </div>
 
-                <div className="hidden md:flex items-center space-x-1 lg:space-x-1">
-                    {navLinks.map((link) => {
+                <nav className="flex-1 flex flex-col items-center justify-center gap-10 min-h-0 py-8">
+                    {navLinks.map((link, i) => {
                         const isActive = activeSection === link.href.substring(1);
                         return (
                             <a
                                 key={link.name}
                                 href={link.href}
                                 onClick={(e) => scrollToSection(e, link.href)}
+                                style={{
+                                    transitionDelay: mobileOpen ? `${100 + i * 100}ms` : "0ms",
+                                }}
                                 className={cn(
-                                    "group relative flex items-center gap-1.5 text-sm font-medium transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 rounded-full px-4 py-2",
-                                    isActive
-                                        ? "text-indigo-600 bg-indigo-50/80"
-                                        : "text-gray-600 hover:text-indigo-600 hover:bg-gray-50/50"
+                                    "relative group font-serif text-4xl sm:text-5xl text-gray-900",
+                                    "transition-all duration-700 ease-out",
+                                    mobileOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8",
+                                    isActive ? "text-indigo-600" : "hover:text-indigo-600"
                                 )}
                             >
-                                <span className={cn(
-                                    "font-medium relative z-10",
-                                    isScrolled ? "text-xs lg:text-sm" : "text-sm"
-                                )}>
-                                    {link.name}
-                                </span>
+                                {link.name}
+                                <span 
+                                    className={cn(
+                                        "absolute -bottom-3 left-1/2 -translate-x-1/2 h-1 bg-indigo-600 transition-all duration-300 rounded-full",
+                                        isActive ? "w-4" : "w-0 group-hover:w-4"
+                                    )} 
+                                />
                             </a>
                         );
                     })}
+                </nav>
+
+                <div 
+                    className={cn(
+                        "px-6 pb-16 flex justify-center",
+                        "transition-all duration-700 ease-out",
+                        mobileOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+                    )}
+                    style={{ transitionDelay: mobileOpen ? `${100 + navLinks.length * 100}ms` : "0ms" }}
+                >
+                    <a
+                        href="#contact"
+                        onClick={(e) => scrollToSection(e, "#contact")}
+                        className="group inline-flex items-center justify-center gap-3 py-4 px-8 rounded-full text-base font-medium text-white bg-gray-900 hover:bg-gray-800 transition-colors duration-200"
+                    >
+                        <span>Schedule a Call</span>
+                        <ArrowRight size={18} className="transition-transform duration-200 group-hover:translate-x-1" />
+                    </a>
                 </div>
+            </div>
 
-                <a
-                    href="#contact"
-                    onClick={(e) => scrollToSection(e, "#contact")}
+            <header
+                className={cn(
+                    "fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out",
+                    "py-3"
+                )}
+            >
+                <nav
                     className={cn(
-                        "hidden md:inline-flex items-center gap-2 px-4 py-1.5 text-sm font-medium rounded-md text-white bg-indigo-600",
-                        "transition-all duration-300 ease-in-out focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500",
-                        "shadow-[0_0_18px_rgba(79,70,229,0.25),_0_2px_6px_rgba(0,0,0,0.08)] hover:shadow-[0_0_30px_rgba(79,70,229,0.55),_0_6px_16px_rgba(0,0,0,0.12)]",
-                        "hover:bg-indigo-700 hover:-translate-y-px",
-                        isScrolled ? "text-sm px-3 py-1.5" : "text-sm px-4 py-1.5"
-                    )}
-
-                >
-                    Get Started
-                    <ArrowRight className={cn("transition-transform duration-300", isScrolled ? "w-3 h-3" : "w-4 h-4")} />
-                </a>
-
-                <button
-                    type="button"
-                    aria-label="Toggle menu"
-                    aria-expanded={mobileOpen}
-                    aria-controls="mobile-nav"
-                    onClick={() => setMobileOpen((s) => !s)}
-                    className={cn(
-                        "md:hidden ml-2 inline-flex items-center justify-center rounded-md p-2 text-gray-700",
-                        "transition-colors hover:bg-gray-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500",
-                        isScrolled && "bg-white/50 hover:bg-gray-50/70"
+                        "relative mx-auto flex items-center justify-between px-4 sm:px-6 lg:px-8",
+                        "transition-all duration-300 ease-in-out",
+                        "w-full max-w-7xl bg-transparent border-b border-transparent",
+                        isScrolled && [
+                            "py-3 px-3",
+                            "max-w-3xl",
+                            "rounded-md",
+                            "border border-gray-200/60",
+                            "bg-white/70",
+                            "shadow-md",
+                            "backdrop-blur-lg",
+                        ]
                     )}
                 >
-                    {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-                </button>
+                    <a
+                        href="#"
+                        className={cn(
+                            "font-serif text-xl text-gray-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 rounded-md",
+                            isScrolled ? "text-lg" : "text-xl",
+                            "transition-all duration-300 ease-in-out"
+                        )}
+                    >
+                        @Beethoval.dev
+                    </a>
 
-                <div
-                    id="mobile-nav"
-                    className={cn(
-                        "absolute left-3 right-3 top-full mt-2 origin-top rounded-xl border border-gray-200/80 bg-white/90 shadow-lg backdrop-blur-md md:hidden overflow-hidden",
-                        "transition-[opacity,transform] duration-200 ease-out",
-                        mobileOpen ? "opacity-100 scale-100" : "pointer-events-none opacity-0 scale-95",
-                    )}
-                >
-                    <div className="flex flex-col divide-y divide-gray-100">
-                        <div className="p-2 space-y-1">
-                            {navLinks.map((link) => {
-                                const isActive = activeSection === link.href.substring(1);
-                                return (
-                                    <a
-                                        key={link.name}
-                                        href={link.href}
-                                        onClick={(e) => scrollToSection(e, link.href)}
-                                        className={cn(
-                                            "flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium transition-colors",
-                                            isActive
-                                                ? "bg-indigo-50 text-indigo-700"
-                                                : "text-gray-800 hover:bg-gray-50 hover:text-indigo-600"
-                                        )}
-                                    >
-                                        <span>{link.name}</span>
-                                        {isActive && <div className="ml-auto w-1.5 h-1.5 rounded-full bg-indigo-600" />}
-                                    </a>
-                                );
-                            })}
-                        </div>
-                        <div className="p-3">
-                            <a
-                                href="#contact"
-                                onClick={(e) => scrollToSection(e, "#contact")}
-                                className={cn(
-                                    "flex w-full items-center justify-center gap-2 rounded-md px-4 py-2 text-sm font-medium text-white bg-indigo-600",
-                                    "transition-all duration-200 ease-in-out",
-                                    "shadow-sm hover:shadow-md hover:bg-indigo-700",
-                                )}
-                            >
-                                Get Started
-                                <ArrowRight className="w-4 h-4" />
-                            </a>
-                        </div>
+                    <div className="hidden md:flex items-center space-x-1 lg:space-x-1">
+                        {navLinks.map((link) => {
+                            const isActive = activeSection === link.href.substring(1);
+                            return (
+                                <a
+                                    key={link.name}
+                                    href={link.href}
+                                    onClick={(e) => scrollToSection(e, link.href)}
+                                    className={cn(
+                                        "group relative flex items-center gap-1.5 text-sm font-medium transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 rounded-full px-4 py-2",
+                                        isActive
+                                            ? "text-indigo-600 bg-indigo-50/80"
+                                            : "text-gray-600 hover:text-indigo-600 hover:bg-gray-50/50"
+                                    )}
+                                >
+                                    <span className={cn(
+                                        "font-medium relative z-10",
+                                        isScrolled ? "text-xs lg:text-sm" : "text-sm"
+                                    )}>
+                                        {link.name}
+                                    </span>
+                                </a>
+                            );
+                        })}
                     </div>
-                </div>
-            </nav>
-        </header>
+
+                    <a
+                        href="#contact"
+                        onClick={(e) => scrollToSection(e, "#contact")}
+                        className={cn(
+                            "hidden md:inline-flex items-center gap-2 px-4 py-1.5 text-sm font-medium rounded-md text-white bg-indigo-600",
+                            "transition-all duration-300 ease-in-out focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500",
+                            "shadow-[0_0_18px_rgba(79,70,229,0.25),_0_2px_6px_rgba(0,0,0,0.08)] hover:shadow-[0_0_30px_rgba(79,70,229,0.55),_0_6px_16px_rgba(0,0,0,0.12)]",
+                            "hover:bg-indigo-700 hover:-translate-y-px",
+                            isScrolled ? "text-sm px-3 py-1.5" : "text-sm px-4 py-1.5"
+                        )}
+                    >
+                        Get Started
+                        <ArrowRight className={cn("transition-transform duration-300", isScrolled ? "w-3 h-3" : "w-4 h-4")} />
+                    </a>
+
+                    <button
+                        type="button"
+                        aria-label="Open menu"
+                        aria-expanded={mobileOpen}
+                        aria-controls="mobile-nav"
+                        onClick={() => setMobileOpen((s) => !s)}
+                        className={cn(
+                            "md:hidden ml-2 inline-flex items-center justify-center rounded-md p-2 text-gray-700",
+                            "transition-colors hover:bg-gray-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500",
+                            isScrolled && "bg-white/50 hover:bg-gray-50/70"
+                        )}
+                    >
+                        <Menu className="w-5 h-5" />
+                    </button>
+                </nav>
+            </header>
+        </>
     );
 };
 

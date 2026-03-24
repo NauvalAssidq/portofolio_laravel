@@ -69,7 +69,7 @@ export const Services = ({ services = [] }: { services: Service[] }) => {
                                     key={service.id}
                                     className={cn(
                                         "relative overflow-hidden rounded-3xl cursor-pointer transition-all duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)]",
-                                        "bg-white border border-gray-200 shadow-sm hover:shadow-lg",
+                                        "bg-white border border-gray-200 hover:shadow-lg",
                                         isActive ? "lg:flex-[3.5]" : "lg:flex-[1] hover:lg:flex-[1.2]",
                                         "h-auto lg:h-full",
                                         isActive ? "bg-gray-900 border-gray-900" : "bg-white"
