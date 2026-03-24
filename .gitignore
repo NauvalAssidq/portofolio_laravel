@@ -15,10 +15,11 @@
 /node_modules
 /public/build
 /public/hot
-
+/public/googlebf8489752947dfb6.html
 /storage/*.key
 /storage/pail
 /vendor
 Homestead.json
 Homestead.yaml
 Thumbs.db
+googlebf8489752947dfb6.html
