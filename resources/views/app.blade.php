@@ -6,43 +6,33 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title inertia>{{ config('app.name', 'Laravel') }}</title>
+    <title inertia>Beethoval Portfolio</title>
 
     <meta name="description" content="Portfolio showcasing premium web development and design services by beethoval.dev.">
     <meta name="keywords" content="web development, ui/ux design, react, laravel, portfolio, frontend developer, full stack developer">
-    <meta name="author" content="{{ config('app.name') }}">
+    <meta name="author" content="Beethoval">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-    <link rel="canonical" href="{{ config('app.url') }}">
+    <link rel="canonical" href="https://beethoval.vercel.app">
 
     <meta name="google-site-verification" content="yGK-t8YDL-XrOSoRZxDxUIf7mcmoUe4Tx_P9qxxv0Cs">
 
     <meta property="og:type" content="website">
-    <meta property="og:url" content="{{ config('app.url') }}">
-    <meta property="og:title" content="{{ config('app.name') }}">
+    <meta property="og:url" content="https://beethoval.vercel.app">
+    <meta property="og:title" content="Beethoval Portfolio">
     <meta property="og:description" content="Portfolio showcasing premium web development and design services by beethoval.dev.">
     <meta property="og:image" content="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80&w=1200">
     <meta property="og:image:alt" content="Portfolio">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <meta property="og:site_name" content="{{ config('app.name') }}">
+    <meta property="og:site_name" content="Beethoval Portfolio">
     <meta property="og:locale" content="en_US">
 
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="{{ config('app.name') }}">
+    <meta name="twitter:title" content="Beethoval Portfolio">
     <meta name="twitter:description" content="Portfolio showcasing premium web development and design services by beethoval.dev.">
     <meta name="twitter:image" content="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80&w=1200">
 
     <meta name="theme-color" content="#0a0a0a">
-
-    <script type="application/ld+json">
-    {!! json_encode([
-        "@context" => "https://schema.org",
-        "@type" => "Person",
-        "name" => config('app.name'),
-        "url" => config('app.url'),
-        "description" => "Portfolio showcasing premium web development and design services by beethoval.dev."
-    ], JSON_UNESCAPED_SLASHES) !!}
-    </script>
 
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
 
