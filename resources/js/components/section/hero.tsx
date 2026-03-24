@@ -89,7 +89,7 @@ export default function Hero() {
                             )}
                             style={{ transitionDelay: isInView ? '600ms' : '0ms' }}
                         >
-                            With Details, and Precision.
+                            With Details and Precision.
                         </h2>
                     </MagneticText>
                     <p
