@@ -11,7 +11,7 @@ interface Service {
 }
 
 export const Services = ({ services = [] }: { services: Service[] }) => {
-    const [activeId, setActiveId] = useState<number | null>(null); // Default to closed on mobile
+    const [activeId, setActiveId] = useState<number | null>(null);
     const sectionRef = useRef<HTMLElement>(null);
     const [isInView, setIsInView] = useState(false);
 
@@ -30,10 +30,8 @@ export const Services = ({ services = [] }: { services: Service[] }) => {
         return () => observer.disconnect();
     }, []);
 
-    // Helper to safely parse specialities if they come as string from backend sometimes or ensure array
     const getSpecialities = (service: Service) => {
         if (Array.isArray(service.specialities)) return service.specialities;
-        // Fallback or parsing logic if needed, but casting in model should handle it
         return [];
     };
 
@@ -72,17 +70,13 @@ export const Services = ({ services = [] }: { services: Service[] }) => {
                                     className={cn(
                                         "relative overflow-hidden rounded-3xl cursor-pointer transition-all duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)]",
                                         "bg-white border border-gray-200 shadow-sm hover:shadow-lg",
-                                        // Desktop flex expansion
                                         isActive ? "lg:flex-[3.5]" : "lg:flex-[1] hover:lg:flex-[1.2]",
-                                        // Mobile: Auto height for accordion, Desktop: Full height
                                         "h-auto lg:h-full",
-                                        // Dark mode for active
                                         isActive ? "bg-gray-900 border-gray-900" : "bg-white"
                                     )}
                                     onMouseEnter={() => setActiveId(service.id)}
                                     onClick={() => setActiveId(isActive ? null : service.id)}
                                 >
-                                    {/* Background Image (Active Only) */}
                                     <div className={cn(
                                         "absolute inset-0 transition-opacity duration-500 pointer-events-none",
                                         isActive ? "opacity-20" : "opacity-0"
@@ -95,13 +89,11 @@ export const Services = ({ services = [] }: { services: Service[] }) => {
                                         <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40 to-transparent" />
                                     </div>
 
-                                    {/* Content Container */}
                                     <div className={cn(
                                         "p-8 flex flex-col justify-between transition-all duration-500",
                                         "relative h-auto",
                                         "lg:absolute lg:inset-0 lg:h-full"
                                     )}>
-                                        {/* Header */}
                                         <div className="flex justify-between items-start mb-4 lg:mb-0">
                                             <span className={cn(
                                                 "font-mono text-xl transition-colors duration-300",
@@ -116,7 +108,6 @@ export const Services = ({ services = [] }: { services: Service[] }) => {
                                             )} />
                                         </div>
 
-                                        {/* Content Group */}
                                         <div className="relative z-10">
                                             <h3 className={cn(
                                                 "font-serif text-3xl md:text-4xl transition-colors duration-300 mb-4",
@@ -152,7 +143,6 @@ export const Services = ({ services = [] }: { services: Service[] }) => {
                         })}
                     </div>
                 ) : (
-                    // Award-Winning Empty State
                     <div
                         className={cn(
                             "w-full py-32 rounded-3xl bg-white border border-dashed border-gray-300 text-center relative overflow-hidden group hover:border-indigo-200 transition-colors duration-500",
@@ -161,7 +151,6 @@ export const Services = ({ services = [] }: { services: Service[] }) => {
                         )}
                         style={{ transitionDelay: '200ms' }}
                     >
-                        {/* Animated Background Blob */}
                         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-indigo-50 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
 
                         <div className="relative z-10">

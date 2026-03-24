@@ -39,17 +39,15 @@ export const Pricing = ({ plans = [] }: { plans: PricingPlan[] }) => {
         };
     }, []);
 
-    // Fallback if no plans exist yet
-    if (plans.length === 0) return null; // Or show custom empty state
+    if (plans.length === 0) return null;
 
     return (
         <section
             ref={sectionRef}
             id="pricing"
-            className="w-full bg-white py-24 sm:py-32 overflow-hidden"
+            className="w-full bg-[#fafafa] py-24 sm:py-32 overflow-hidden"
         >
             <div className="max-w-6xl mx-auto px-6">
-                {/* Header */}
                 <div
                     className={cn(
                         "text-center mb-16 transition-all duration-1000",
@@ -63,7 +61,6 @@ export const Pricing = ({ plans = [] }: { plans: PricingPlan[] }) => {
                         Transparent pricing with no hidden fees. Pay for what you need.
                     </p>
 
-                    {/* Billing Toggle */}
                     <div className="inline-flex items-center gap-4 p-1 bg-gray-100 rounded-full">
                         <button
                             onClick={() => setIsAnnual(false)}
@@ -87,7 +84,6 @@ export const Pricing = ({ plans = [] }: { plans: PricingPlan[] }) => {
                     </div>
                 </div>
 
-                {/* Pricing Cards */}
                 <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
                     {plans.map((plan, index) => {
                         const price = isAnnual ? plan.price_annually : plan.price_monthly;
