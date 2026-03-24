@@ -15,7 +15,7 @@ export const SeoHead = ({
     description = "Portfolio showcasing premium web development and design services by beethoval.dev.",
     keywords = "web development, ui/ux design, react, laravel, portfolio, frontend developer, full stack developer",
     image = "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80&w=1200",
-    imageAlt = "Portfolio preview",
+    imageAlt = "Portfolio",
     url,
     twitterHandle,
 }: SeoHeadProps) => {
@@ -48,7 +48,7 @@ export const SeoHead = ({
             <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
             <link rel="canonical" href={currentUrl} />
 
-            <meta name="google-site-verification" content="bf8489752947dfb6" />
+            <meta name="google-site-verification" content="yGK-t8YDL-XrOSoRZxDxUIf7mcmoUe4Tx_P9qxxv0Cs" />
 
             <meta httpEquiv="content-language" content="en" />
 
