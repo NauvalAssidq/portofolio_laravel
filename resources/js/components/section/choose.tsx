@@ -10,7 +10,6 @@ import {
     CheckCircle
 } from "lucide-react";
 
-// Spotlight Effect Hook
 const useSpotlight = (divRef: React.RefObject<HTMLDivElement | null>) => {
     const [position, setPosition] = useState({ x: 0, y: 0 });
     const [opacity, setOpacity] = useState(0);
@@ -152,7 +151,10 @@ export const WhyChooseMe = ({ reasons = [] }: { reasons: Reason[] }) => {
                 setIsInView(true);
                 observer.unobserve(entry.target);
             }
-        }, { threshold: 0.1 });
+        }, { 
+            threshold: 0.1,
+            rootMargin: "0px 0px -150px 0px" 
+        });
 
         if (sectionRef.current) observer.observe(sectionRef.current);
         return () => observer.disconnect();
@@ -163,7 +165,7 @@ export const WhyChooseMe = ({ reasons = [] }: { reasons: Reason[] }) => {
     return (
         <section
             ref={sectionRef}
-            className="relative w-full bg-white py-24 sm:py-32 overflow-hidden"
+            className="relative w-full bg-[#fafafa] py-24 sm:py-32 overflow-hidden"
         >
             <div className="max-w-7xl mx-auto px-6">
                 <div className="flex flex-col md:flex-row items-end justify-between mb-20 gap-8">

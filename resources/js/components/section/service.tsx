@@ -23,7 +23,10 @@ export const Services = ({ services = [] }: { services: Service[] }) => {
                     observer.unobserve(entry.target);
                 }
             },
-            { threshold: 0.1 }
+            { 
+                threshold: 0.1,
+                rootMargin: "0px 0px -150px 0px"
+            }
         );
 
         if (sectionRef.current) observer.observe(sectionRef.current);
@@ -38,7 +41,7 @@ export const Services = ({ services = [] }: { services: Service[] }) => {
     return (
         <section
             ref={sectionRef}
-            className="relative w-full bg-[#fafafa] py-24 md:py-32 overflow-hidden"
+            className="relative w-full bg-white py-24 md:py-32 overflow-hidden"
             id="services"
         >
             <div className="max-w-7xl mx-auto px-6">

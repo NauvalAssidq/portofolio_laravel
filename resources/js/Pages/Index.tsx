@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Navbar from "@/components/section/nav";
 import Hero from "@/components/section/hero";
+import { About } from "@/components/section/about";
 import { Showcase } from "@/components/section/project"
 import { Services } from "@/components/section/service"
 import { Pricing } from "@/components/section/pricing";
@@ -32,6 +33,7 @@ export default function Home({ projects, services, pricings, chooses }: { projec
             <main>
                 <Hero />
                 <Showcase projects={projects} />
+                <About />
                 <Services services={services} />
                 <WhyChooseMe reasons={chooses} />
                 <Pricing plans={pricings} />

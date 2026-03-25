@@ -24,6 +24,10 @@ const Navbar = ({ isScrolled }: { isScrolled: boolean }) => {
             href: "#showcase",
         },
         {
+            name: "About",
+            href: "#about",
+        },
+        {
             name: "Services",
             href: "#services",
         },
@@ -181,11 +185,11 @@ const Navbar = ({ isScrolled }: { isScrolled: boolean }) => {
                         "w-full max-w-7xl bg-transparent border-b border-transparent",
                         isScrolled && [
                             "py-3 px-3",
-                            "max-w-3xl",
+                            "max-w-4xl",
                             "rounded-md",
-                            "border border-gray-200/60",
+                            "border border-gray-200",
                             "bg-white/70",
-                            "shadow-md",
+                            "shadow-xl/10",
                             "backdrop-blur-lg",
                         ]
                     )}

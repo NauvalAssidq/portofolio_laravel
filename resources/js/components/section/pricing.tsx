@@ -30,7 +30,10 @@ export const Pricing = ({ plans = [] }: { plans: PricingPlan[] }) => {
                     observer.unobserve(entry.target);
                 }
             },
-            { threshold: 0.1 }
+            { 
+                threshold: 0.1,
+                rootMargin: "0px 0px -150px 0px"
+            }
         );
         const currentRef = sectionRef.current;
         if (currentRef) observer.observe(currentRef);
@@ -45,7 +48,7 @@ export const Pricing = ({ plans = [] }: { plans: PricingPlan[] }) => {
         <section
             ref={sectionRef}
             id="pricing"
-            className="w-full bg-[#fafafa] py-24 sm:py-32 overflow-hidden"
+            className="w-full bg-white py-24 sm:py-32 overflow-hidden"
         >
             <div className="max-w-6xl mx-auto px-6">
                 <div

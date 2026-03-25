@@ -15,7 +15,10 @@ export const Footer = () => {
                     observer.unobserve(entry.target);
                 }
             },
-            { threshold: 0.1 }
+            { 
+                threshold: 0.1,
+                rootMargin: "0px 0px -150px 0px"
+            }
         );
 
         if (sectionRef.current) observer.observe(sectionRef.current);
