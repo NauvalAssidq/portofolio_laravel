@@ -30,7 +30,7 @@ export const About = () => {
                     transition={{ duration: 1.0, delay: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
                     className="text-center text-xl md:text-2xl text-gray-500 max-w-3xl font-light leading-relaxed mb-24"
                 >
-                    Bridging the gap between aesthetics and engineering to build digital experiences that are blazingly fast, deeply intuitive, and utterly memorable.
+                    Hi, I'm <strong className="font-medium text-gray-800">Nauval Dhonand Sidiq</strong>, a web developer based in <strong className="font-medium text-gray-800">Banda Aceh</strong>. By bridging the gap between aesthetics and engineering, I build digital experiences that are blazingly fast, deeply intuitive, and utterly memorable.
                 </motion.p>
 
                 <div className="flex flex-col md:flex-row items-center justify-center gap-12 md:gap-24 w-full max-w-5xl mx-auto">
