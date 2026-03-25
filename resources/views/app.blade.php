@@ -46,6 +46,11 @@
     @inertiaHead
 </head>
 <body class="font-sans antialiased">
-@inertia
+    <div itemscope itemtype="https://schema.org/WebSite" style="display:none;">
+        <meta itemprop="url" content="https://beethoval.vercel.app/"/>
+        <meta itemprop="name" content="Beethoval.dev"/>
+        <meta itemprop="alternateName" content="Beethoval Portfolio"/>
+    </div>
+    @inertia
 </body>
 </html>

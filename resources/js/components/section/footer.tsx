@@ -75,12 +75,10 @@ export const Footer = () => {
                         </a>
                     </div>
 
-                    {/* Right: Navigation Grid */}
                     <div className={cn(
                         "lg:col-span-4 grid grid-cols-2 gap-8 text-lg pt-4 lg:pt-0 transition-all duration-1000 delay-200 ease-out",
                         isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
                     )}>
-                        {/* Sitemap */}
                         <div className="flex flex-col gap-4">
                             <span className="text-sm font-semibold text-gray-500 tracking-wider uppercase mb-2">
                                 Sitemap
@@ -96,7 +94,6 @@ export const Footer = () => {
                             ))}
                         </div>
 
-                        {/* Socials */}
                         <div className="flex flex-col gap-4">
                             <span className="text-sm font-semibold text-gray-500 tracking-wider uppercase mb-2">
                                 Socials
@@ -115,12 +112,10 @@ export const Footer = () => {
                     </div>
                 </div>
 
-                {/* Massive Background Text & Copyright */}
                 <div className={cn(
                     "relative border-t border-gray-800 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 transition-all duration-1000 delay-500 ease-out",
                     isInView ? "opacity-100" : "opacity-0"
                 )}>
-                    {/* Faded background text for depth */}
                     <div className="absolute left-1/2 -translate-x-1/2 bottom-0 text-[15vw] font-serif font-bold text-gray-900 leading-none whitespace-nowrap pointer-events-none -mb-4 sm:-mb-8 md:-mb-12 z-0">
                         NAUVAL
                     </div>
@@ -134,6 +129,16 @@ export const Footer = () => {
                     </div>
                 </div>
 
+                <div itemScope itemType="https://schema.org/ProfessionalService" style={{ display: "none" }}>
+                    <span itemProp="name">Beethoval Dev</span>
+                    <span itemProp="description">Freelance Web Developer in Banda Aceh.</span>
+                    <div itemProp="address" itemScope itemType="https://schema.org/PostalAddress">
+                        <span itemProp="addressLocality">Banda Aceh</span>
+                        <span itemProp="addressRegion">Aceh</span>
+                        <span itemProp="addressCountry">ID</span>
+                    </div>
+                    <span itemProp="jobTitle">Web Developer</span>
+                </div>
             </div>
         </footer>
     );
