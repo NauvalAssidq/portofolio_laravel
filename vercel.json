@@ -20,6 +20,18 @@
       "dest": "/favicon.ico"
     },
     {
+      "src": "/sitemap.xml",
+      "dest": "/sitemap.xml"
+    },
+    {
+      "src": "/robots.txt",
+      "dest": "/robots.txt"
+    },
+    {
+      "src": "/(google.*\\.html)",
+      "dest": "/$1"
+    },
+    {
       "src": "/(.*)",
       "dest": "/api/index.php"
     }
