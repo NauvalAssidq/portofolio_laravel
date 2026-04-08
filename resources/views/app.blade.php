@@ -6,13 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>Home | beethoval.dev — Web Developer Banda Aceh</title>
+    <title>Beethoval - Web Dev Banda Aceh</title>
 
     <meta name="description" content="beethoval.dev — Web development studio founded by Nauval Dhonand Sidiq in Banda Aceh. We build premium websites and web applications with React, Laravel & modern UI/UX design for businesses in Banda Aceh and beyond.">
     <meta name="keywords" content="beethoval.dev, Nauval Dhonand Sidiq, developer website banda aceh, web dev banda aceh, web developer banda aceh, jasa pembuatan website banda aceh, jasa web banda aceh, fullstack developer aceh, react developer banda aceh, laravel developer banda aceh, freelance web developer indonesia, ui ux designer banda aceh, web development studio aceh, portfolio developer aceh">
     <meta name="author" content="Nauval Dhonand Sidiq">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-    <link rel="canonical" href="https://beethoval.dev">
+    
+    {{-- Canonical link fixed --}}
+    <link rel="canonical" href="https://beethoval.vercel.app">
 
     <meta name="google-site-verification" content="yGK-t8YDL-XrOSoRZxDxUIf7mcmoUe4Tx_P9qxxv0Cs">
 
@@ -25,7 +27,7 @@
     <meta http-equiv="content-language" content="en, id">
 
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://beethoval.dev">
+    <meta property="og:url" content="https://beethoval.vercel.app">
     <meta property="og:title" content="Home | beethoval.dev — Web Developer Banda Aceh">
     <meta property="og:description" content="beethoval.dev — Web development studio founded by Nauval Dhonand Sidiq. Premium websites & web applications built with React, Laravel & modern UI/UX in Banda Aceh.">
     <meta property="og:image" content="https://raw.githubusercontent.com/NauvalAssidq/portofolio_laravel/refs/heads/main/public/storage/image.png">
@@ -49,6 +51,17 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
 
+    {{-- Script JSON-LD yang sudah di-escape (aman dari Blade error) --}}
+    <script type="application/ld+json">
+    {
+      "@@context": "https://schema.org",
+      "@@type": "WebSite",
+      "name": "beethoval.dev",
+      "alternateName": "Beethoval",
+      "url": "https://beethoval.vercel.app/"
+    }
+    </script>
+
     @routes
     @viteReactRefresh
     @vite(['resources/js/app.tsx', "resources/js/Pages/{$page['component']}.tsx"])
@@ -58,4 +71,3 @@
     @inertia
 </body>
 </html>
-
