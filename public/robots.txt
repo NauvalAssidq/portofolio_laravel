@@ -5,4 +5,4 @@ Disallow: /api/
 Disallow: /storage/
 
 # Sitemap
-Sitemap: /sitemap.xml
+Sitemap: https://beethoval.vercel.app/sitemap.xml
