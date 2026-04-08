@@ -12,45 +12,32 @@ interface SeoHeadProps {
 
 export const SeoHead = ({
     title,
-    description = "Portfolio showcasing premium web development and design services by beethoval.dev.",
-    keywords = "web development, ui/ux design, react, laravel, portfolio, frontend developer, full stack developer",
-    image = "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80&w=1200",
-    imageAlt = "Portfolio",
+    description = "Nauval Dhonand Sidiq — Professional web developer based in Banda Aceh. Full-stack expertise in React, Laravel & modern UI/UX.",
+    keywords = "Nauval Dhonand Sidiq, developer website banda aceh, web dev banda aceh, web developer banda aceh, fullstack developer aceh, react developer, laravel developer, ui ux designer banda aceh, beethoval.dev",
+    image = "https://raw.githubusercontent.com/NauvalAssidq/portofolio_laravel/refs/heads/main/public/storage/image.png",
+    imageAlt = "Nauval Dhonand Sidiq — Web Developer Portfolio",
     url,
     twitterHandle,
 }: SeoHeadProps) => {
     const { props } = usePage<any>();
-    const siteName = props.app?.name || "Beethoval Portfolio";
-    const appUrl = props.app?.url || "";
+    const siteName = "beethoval.dev";
+    const appUrl = props.app?.url || "https://beethoval.dev";
 
     const fullTitle = `${title} | ${siteName}`;
     const currentUrl = url || (typeof window !== 'undefined' ? window.location.href : appUrl);
 
-    const structuredData = JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "Person",
-        name: siteName,
-        url: appUrl,
-        description,
-        sameAs: [],
-    });
-
     return (
         <Head>
-            <title>{title}</title>
+            <title>{fullTitle}</title>
 
             <meta name="viewport" content="width=device-width, initial-scale=1" />
             <meta charSet="UTF-8" />
             <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
             <meta name="description" content={description} />
             <meta name="keywords" content={keywords} />
-            <meta name="author" content={siteName} />
+            <meta name="author" content="Nauval Dhonand Sidiq" />
             <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
             <link rel="canonical" href={currentUrl} />
-
-            <meta name="google-site-verification" content="yGK-t8YDL-XrOSoRZxDxUIf7mcmoUe4Tx_P9qxxv0Cs" />
-
-            <meta httpEquiv="content-language" content="en" />
 
             <meta property="og:type" content="website" />
             <meta property="og:url" content={currentUrl} />
@@ -73,8 +60,6 @@ export const SeoHead = ({
             {twitterHandle && <meta name="twitter:site" content={twitterHandle} />}
 
             <meta name="theme-color" content="#0a0a0a" />
-
-            <script type="application/ld+json">{structuredData}</script>
         </Head>
     );
 };

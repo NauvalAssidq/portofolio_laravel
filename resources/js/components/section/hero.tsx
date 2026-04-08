@@ -39,7 +39,7 @@ export default function Hero() {
     return (
         <section
             ref={sectionRef}
-            className="relative min-h-dvh flex items-center justify-center bg-[#fafafa] pt-32 pb-20 sm:py-28 px-4 sm:px-6 lg:px-8 overflow-hidden"
+            className="relative min-h-dvh flex items-center justify-center bg-[#fafafa] pt-32 pb-20 sm:py-28 px-4 sm:px-6 lg:px-8"
         >
         <InteractiveGrid />
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-indigo-500/50 to-transparent" />

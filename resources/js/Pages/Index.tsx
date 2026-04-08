@@ -14,8 +14,6 @@ import { useSmoothScroll } from "@/hooks/use-smooth-scroll";
 
 export default function Home({ projects, services, pricings, chooses }: { projects: any[], services: any[], pricings: any[], chooses: any[] }) {
     const [isScrolled, setIsScrolled] = useState(false);
-
-    // Enable smooth scrolling
     useSmoothScroll();
 
     useEffect(() => {
@@ -26,8 +24,9 @@ export default function Home({ projects, services, pricings, chooses }: { projec
     return (
         <>
             <SeoHead
-                title="Home"
-                description="Experience premium web development and award-winning design. I build high-performance applications with React, Laravel, and cutting-edge UI/UX."
+                title="Nauval Dhonand Sidiq — Web Developer Banda Aceh"
+                description="Nauval Dhonand Sidiq — Professional web developer based in Banda Aceh. Full-stack expertise in React, Laravel & modern UI/UX. Building premium websites and web applications for businesses in Banda Aceh and beyond."
+                url="https://beethoval.dev"
             />
             <Navbar isScrolled={isScrolled} />
             <main>

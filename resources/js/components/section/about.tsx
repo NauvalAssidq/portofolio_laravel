@@ -7,7 +7,7 @@ export const About = () => {
             id="about"
             className="relative w-full bg-[#fafafa] py-32 md:py-64 overflow-hidden select-none"
         >
-            <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent" />
+
             <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent" />
 
             <div className="max-w-7xl mx-auto px-6 relative z-10 flex flex-col items-center justify-center">
