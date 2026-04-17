@@ -15,8 +15,10 @@
     
     {{-- Canonical link fixed --}}
     <link rel="canonical" href="https://beethoval.dev">
-
+    <!-- Beethoval.verce.app -->
     <meta name="google-site-verification" content="yGK-t8YDL-XrOSoRZxDxUIf7mcmoUe4Tx_P9qxxv0Cs">
+    <!-- Beethoval.dev -->
+    <meta name="google-site-verification" content="tS6otYTT_IvP3n7DoNVZxyjQtO9h7GlU2k9vyBPGme0" />
 
     {{-- Geo-targeting for Banda Aceh --}}
     <meta name="geo.region" content="ID-AC">
