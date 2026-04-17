@@ -136,7 +136,9 @@ export const Pricing = ({ plans = [] }: { plans: PricingPlan[] }) => {
                                                 "text-4xl font-serif tracking-tight",
                                                 plan.is_popular ? "text-white" : "text-gray-900"
                                             )}>
-                                                {plan.currency === 'USD' ? '$' : 'IDR '}{Number(price).toLocaleString()}
+                                            {plan.currency === 'IDR'
+                                                ? `Rp ${Number(price).toLocaleString('id-ID')}`
+                                                : `$${Number(price).toLocaleString()}`}
                                             </span>
                                             <span className={cn(
                                                 "text-sm",

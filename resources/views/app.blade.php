@@ -14,7 +14,7 @@
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     
     {{-- Canonical link fixed --}}
-    <link rel="canonical" href="https://beethoval.vercel.app">
+    <link rel="canonical" href="https://beethoval.dev">
 
     <meta name="google-site-verification" content="yGK-t8YDL-XrOSoRZxDxUIf7mcmoUe4Tx_P9qxxv0Cs">
 
@@ -27,7 +27,7 @@
     <meta http-equiv="content-language" content="en, id">
 
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://beethoval.vercel.app">
+    <meta property="og:url" content="https://beethoval.dev">
     <meta property="og:title" content="Home | beethoval.dev — Web Developer Banda Aceh">
     <meta property="og:description" content="beethoval.dev — Web development studio founded by Nauval Dhonand Sidiq. Premium websites & web applications built with React, Laravel & modern UI/UX in Banda Aceh.">
     <meta property="og:image" content="https://raw.githubusercontent.com/NauvalAssidq/portofolio_laravel/refs/heads/main/public/storage/image.png">
@@ -58,7 +58,7 @@
       "@@type": "WebSite",
       "name": "beethoval.dev",
       "alternateName": "Beethoval",
-      "url": "https://beethoval.vercel.app/"
+      "url": "https://beethoval.dev/"
     }
     </script>
 

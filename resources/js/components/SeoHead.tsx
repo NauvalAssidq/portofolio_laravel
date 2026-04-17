@@ -21,7 +21,7 @@ export const SeoHead = ({
 }: SeoHeadProps) => {
     const { props } = usePage<any>();
     const siteName = "beethoval.dev";
-    const appUrl = props.app?.url || "https://beethoval.vercel.app";
+    const appUrl = props.app?.url || "https://beethoval.dev";
 
     const fullTitle = `${title} | ${siteName}`;
     const currentUrl = url || (typeof window !== 'undefined' ? window.location.href : appUrl);
