@@ -6,10 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>Beethoval - Web Dev Banda Aceh</title>
+    <title>Beethoval - Web Dev Aceh & Indonesia</title>
 
-    <meta name="description" content="beethoval.dev — Web development studio founded by Nauval Dhonand Sidiq in Banda Aceh. We build premium websites and web applications with React, Laravel & modern UI/UX design for businesses in Banda Aceh and beyond.">
-    <meta name="keywords" content="beethoval.dev, Nauval Dhonand Sidiq, developer website banda aceh, web dev banda aceh, web developer banda aceh, jasa pembuatan website banda aceh, jasa web banda aceh, fullstack developer aceh, react developer banda aceh, laravel developer banda aceh, freelance web developer indonesia, ui ux designer banda aceh, web development studio aceh, portfolio developer aceh">
+    <meta name="description" content="beethoval.dev — Web development studio founded by Nauval Dhonand Sidiq. We build premium websites and web applications with React, Laravel & modern UI/UX design for businesses in Aceh, Indonesia, and beyond.">
+    <meta name="keywords" content="beethoval.dev, Nauval Dhonand Sidiq, web dev aceh, web dev indonesia, web developer aceh, web developer indonesia, jasa pembuatan website aceh, jasa web indonesia, fullstack developer indonesia, react developer indonesia, laravel developer indonesia, freelance web developer indonesia, ui ux designer indonesia, web development studio indonesia, portfolio developer indonesia, jasa website jakarta, developer website banda aceh">
     <meta name="author" content="Nauval Dhonand Sidiq">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     
@@ -30,8 +30,8 @@
 
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://beethoval.dev">
-    <meta property="og:title" content="Home | beethoval.dev — Web Developer Banda Aceh">
-    <meta property="og:description" content="beethoval.dev — Web development studio founded by Nauval Dhonand Sidiq. Premium websites & web applications built with React, Laravel & modern UI/UX in Banda Aceh.">
+    <meta property="og:title" content="Beethoval - Web Dev Aceh & Indonesia">
+    <meta property="og:description" content="beethoval.dev — Web development studio by Nauval Dhonand Sidiq. Premium websites & web applications built with React, Laravel & modern UI/UX in Aceh and Indonesia.">
     <meta property="og:image" content="https://raw.githubusercontent.com/NauvalAssidq/portofolio_laravel/refs/heads/main/public/storage/image.png">
     <meta property="og:image:alt" content="beethoval.dev — Web Development Studio by Nauval Dhonand Sidiq">
     <meta property="og:image:width" content="1200">
@@ -41,8 +41,8 @@
     <meta property="og:locale:alternate" content="id_ID">
 
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Home | beethoval.dev — Web Developer Banda Aceh">
-    <meta name="twitter:description" content="beethoval.dev — Web development studio founded by Nauval Dhonand Sidiq. Premium websites & apps in Banda Aceh.">
+    <meta name="twitter:title" content="Beethoval - Web Dev Aceh & Indonesia">
+    <meta name="twitter:description" content="beethoval.dev — Web development studio by Nauval Dhonand Sidiq. Premium websites & apps serving Aceh and Indonesia.">
     <meta name="twitter:image" content="https://raw.githubusercontent.com/NauvalAssidq/portofolio_laravel/refs/heads/main/public/storage/image.png">
 
     <meta name="theme-color" content="#0a0a0a">
