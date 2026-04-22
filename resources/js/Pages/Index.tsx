@@ -9,6 +9,7 @@ import { CookieConsentBanner } from '@/components/ui/CookieConsentBanner';
 import { WhyChooseMe } from "@/components/section/choose";
 import { Footer } from "@/components/section/footer";
 import { useSmoothScroll } from "@/hooks/use-smooth-scroll";
+import { SeoHead } from "@/components/SeoHead";
 
 
 export default function Home({ projects, services, pricings, chooses }: { projects: any[], services: any[], pricings: any[], chooses: any[] }) {
@@ -22,6 +23,7 @@ export default function Home({ projects, services, pricings, chooses }: { projec
     }, []);
     return (
         <>
+            <SeoHead title="Home" />
             <Navbar isScrolled={isScrolled} />
             <main>
                 <Hero />
