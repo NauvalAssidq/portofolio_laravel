@@ -1,7 +1,10 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { useLocale } from "@/context/LocaleContext";
 
 export const About = () => {
+    const { t } = useLocale();
+
     return (
         <section
             id="about"
@@ -19,8 +22,8 @@ export const About = () => {
                     transition={{ duration: 1.0, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
                     className="text-center font-serif text-4xl md:text-6xl lg:text-7xl text-gray-900 leading-[1.1] mb-12 tracking-tight max-w-5xl mx-auto"
                 >
-                    I believe in the power of <br className="hidden md:block" />
-                    <span className="italic text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-500">invisible design</span> and <span className="italic text-gray-400">flawless execution</span>.
+                    {t.about.headline} <br className="hidden md:block" />
+                    <span className="italic text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-500">{t.about.italic1}</span> {t.about.and} <span className="italic text-gray-400">{t.about.italic2}</span>.
                 </motion.h2>
                 
                 <motion.p 
@@ -29,9 +32,8 @@ export const About = () => {
                     viewport={{ once: true, margin: "-150px" }}
                     transition={{ duration: 1.0, delay: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
                     className="text-center text-xl md:text-2xl text-gray-500 max-w-3xl font-light leading-relaxed mb-24"
-                >
-                    Hi, I'm <strong className="font-medium text-gray-800">Nauval Dhonand Sidiq</strong>, a web developer based in <strong className="font-medium text-gray-800">Banda Aceh</strong>. By bridging the gap between aesthetics and engineering, I build digital experiences that are blazingly fast, deeply intuitive, and utterly memorable.
-                </motion.p>
+                    dangerouslySetInnerHTML={{ __html: t.about.description }}
+                />
 
                 <div className="flex flex-col md:flex-row items-center justify-center gap-12 md:gap-24 w-full max-w-5xl mx-auto">
                     <motion.div 
@@ -44,7 +46,7 @@ export const About = () => {
                         <span className="font-serif text-5xl md:text-8xl text-gray-900 tracking-tighter">
                             30<span className="text-indigo-500 align-top">+</span>
                         </span>
-                        <span className="text-xs md:text-sm font-medium text-gray-400 uppercase tracking-widest mt-6">Projects Shipped</span>
+                        <span className="text-xs md:text-sm font-medium text-gray-400 uppercase tracking-widest mt-6">{t.about.stat1Label}</span>
                     </motion.div>
                     
                     <motion.div 
@@ -63,9 +65,9 @@ export const About = () => {
                         className="flex flex-col items-center"
                     >
                         <span className="font-serif text-5xl md:text-8xl text-gray-900 tracking-tighter">
-                            3<span className="text-2xl md:text-5xl text-indigo-500 align-top ml-1">YRS</span>
+                            3<span className="text-2xl md:text-5xl text-indigo-500 align-top ml-1">{t.about.stat2Suffix}</span>
                         </span>
-                        <span className="text-xs md:text-sm font-medium text-gray-400 uppercase tracking-widest mt-6">Experience</span>
+                        <span className="text-xs md:text-sm font-medium text-gray-400 uppercase tracking-widest mt-6">{t.about.stat2Label}</span>
                     </motion.div>
                     
                     <motion.div 
@@ -86,7 +88,7 @@ export const About = () => {
                         <span className="font-serif text-5xl md:text-8xl text-gray-900 tracking-tighter">
                             99<span className="text-2xl md:text-5xl text-indigo-500 align-top ml-1">%</span>
                         </span>
-                        <span className="text-xs md:text-sm font-medium text-gray-400 uppercase tracking-widest mt-6">Satisfaction</span>
+                        <span className="text-xs md:text-sm font-medium text-gray-400 uppercase tracking-widest mt-6">{t.about.stat3Label}</span>
                     </motion.div>
                 </div>
             </div>

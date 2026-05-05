@@ -1,67 +1,136 @@
-[
-    {
-        "id": 1,
-        "name": "Starter",
-        "description": "Perfect for designers and freelancers who want a professional presence online.",
-        "price_monthly": "2500000",
-        "price_annually": "2250000",
-        "currency": "IDR",
-        "period": "\/ project",
-        "features": [
-            "Up to 5 Pages",
-            "Mobile Responsive Design",
-            "Contact Form Integration",
-            "Basic SEO Optimization",
-            "1 Week Delivery"
-        ],
-        "cta_text": "Get Started",
-        "cta_link": "#contact",
-        "is_popular": false,
-        "created_at": "2026-01-02T21:20:08.000000Z",
-        "updated_at": "2026-01-03T09:12:28.000000Z"
-    },
-    {
-        "id": 2,
-        "name": "Professional",
-        "description": "For growing businesses that need dynamic features and full content management.",
-        "price_monthly": "5500000",
-        "price_annually": "4950000",
-        "currency": "IDR",
-        "period": "\/ project",
-        "features": [
-            "Up to 15 Pages",
-            "CMS Integration (Content Management)",
-            "Advanced SEO & Analytics",
-            "Blog \/ News Section",
-            "Performance Optimization",
-            "2 Weeks Delivery"
-        ],
-        "cta_text": "Best Value",
-        "cta_link": "#contact",
-        "is_popular": true,
-        "created_at": "2026-01-02T21:20:08.000000Z",
-        "updated_at": "2026-01-03T09:12:45.000000Z"
-    },
-    {
-        "id": 3,
-        "name": "Enterprise",
-        "description": "Custom solutions for large-scale applications with complex requirements.",
-        "price_monthly": null,
-        "price_annually": null,
-        "currency": "IDR",
-        "period": "\/ project",
-        "features": [
-            "Unlimited Pages",
-            "Custom Web Application Development",
-            "API Integration & Development",
-            "User Authentication System",
-            "Priority Support & Maintenance",
-            "Dedicated Project Manager"
-        ],
-        "cta_text": "Contact Us",
-        "cta_link": "#contact",
-        "is_popular": false,
-        "created_at": "2026-01-02T21:20:08.000000Z",
-        "updated_at": "2026-01-02T21:20:08.000000Z"
-    }
-]
+{
+    "en": [
+        {
+            "id": 1,
+            "name": "Starter",
+            "description": "Perfect for designers and freelancers who want a professional presence online.",
+            "price_monthly": "2500000",
+            "price_annually": "2250000",
+            "currency": "IDR",
+            "period": "/ project",
+            "features": [
+                "Up to 5 Pages",
+                "Mobile Responsive Design",
+                "Contact Form Integration",
+                "Basic SEO Optimization",
+                "1 Week Delivery"
+            ],
+            "cta_text": "Get Started",
+            "cta_link": "#contact",
+            "is_popular": false,
+            "created_at": "2026-01-02T21:20:08.000000Z",
+            "updated_at": "2026-01-03T09:12:28.000000Z"
+        },
+        {
+            "id": 2,
+            "name": "Professional",
+            "description": "For growing businesses that need dynamic features and full content management.",
+            "price_monthly": "5500000",
+            "price_annually": "4950000",
+            "currency": "IDR",
+            "period": "/ project",
+            "features": [
+                "Up to 15 Pages",
+                "CMS Integration (Content Management)",
+                "Advanced SEO & Analytics",
+                "Blog / News Section",
+                "Performance Optimization",
+                "2 Weeks Delivery"
+            ],
+            "cta_text": "Best Value",
+            "cta_link": "#contact",
+            "is_popular": true,
+            "created_at": "2026-01-02T21:20:08.000000Z",
+            "updated_at": "2026-01-03T09:12:45.000000Z"
+        },
+        {
+            "id": 3,
+            "name": "Enterprise",
+            "description": "Custom solutions for large-scale applications with complex requirements.",
+            "price_monthly": null,
+            "price_annually": null,
+            "currency": "IDR",
+            "period": "/ project",
+            "features": [
+                "Unlimited Pages",
+                "Custom Web Application Development",
+                "API Integration & Development",
+                "User Authentication System",
+                "Priority Support & Maintenance",
+                "Dedicated Project Manager"
+            ],
+            "cta_text": "Contact Us",
+            "cta_link": "#contact",
+            "is_popular": false,
+            "created_at": "2026-01-02T21:20:08.000000Z",
+            "updated_at": "2026-01-02T21:20:08.000000Z"
+        }
+    ],
+    "id": [
+        {
+            "id": 1,
+            "name": "Pemula",
+            "description": "Sangat cocok untuk desainer dan freelancer yang ingin membangun kehadiran profesional secara online.",
+            "price_monthly": "2500000",
+            "price_annually": "2250000",
+            "currency": "IDR",
+            "period": "/ proyek",
+            "features": [
+                "Maksimal 5 Halaman",
+                "Desain Responsif Mobile",
+                "Integrasi Form Kontak",
+                "Optimasi SEO Dasar",
+                "Pengerjaan 1 Minggu"
+            ],
+            "cta_text": "Mulai Sekarang",
+            "cta_link": "#contact",
+            "is_popular": false,
+            "created_at": "2026-01-02T21:20:08.000000Z",
+            "updated_at": "2026-01-03T09:12:28.000000Z"
+        },
+        {
+            "id": 2,
+            "name": "Profesional",
+            "description": "Untuk bisnis yang berkembang yang membutuhkan fitur dinamis dan manajemen konten penuh.",
+            "price_monthly": "5500000",
+            "price_annually": "4950000",
+            "currency": "IDR",
+            "period": "/ proyek",
+            "features": [
+                "Maksimal 15 Halaman",
+                "Integrasi CMS (Manajemen Konten)",
+                "SEO Lanjutan & Analitik",
+                "Bagian Blog / Berita",
+                "Optimasi Performa",
+                "Pengerjaan 2 Minggu"
+            ],
+            "cta_text": "Paling Diminati",
+            "cta_link": "#contact",
+            "is_popular": true,
+            "created_at": "2026-01-02T21:20:08.000000Z",
+            "updated_at": "2026-01-03T09:12:45.000000Z"
+        },
+        {
+            "id": 3,
+            "name": "Perusahaan",
+            "description": "Solusi kustom untuk aplikasi skala besar dengan persyaratan yang kompleks.",
+            "price_monthly": null,
+            "price_annually": null,
+            "currency": "IDR",
+            "period": "/ proyek",
+            "features": [
+                "Halaman Tak Terbatas",
+                "Pengembangan Aplikasi Web Kustom",
+                "Integrasi & Pengembangan API",
+                "Sistem Autentikasi Pengguna",
+                "Dukungan & Pemeliharaan Prioritas",
+                "Manajer Proyek Khusus"
+            ],
+            "cta_text": "Hubungi Kami",
+            "cta_link": "#contact",
+            "is_popular": false,
+            "created_at": "2026-01-02T21:20:08.000000Z",
+            "updated_at": "2026-01-02T21:20:08.000000Z"
+        }
+    ]
+}

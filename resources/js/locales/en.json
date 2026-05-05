@@ -1,0 +1,87 @@
+{
+  "nav": {
+    "showcase": "Showcase",
+    "about": "About",
+    "services": "Services",
+    "pricing": "Pricing",
+    "contact": "Contact",
+    "cta": "Get Started",
+    "scheduleCall": "Schedule a Call"
+  },
+  "hero": {
+    "badge": "Currently open to work, DM me!",
+    "headline1": "Craft Stunning",
+    "headlineAnd": "&",
+    "headline2": "Websites",
+    "headlineSuffix": "Apps",
+    "sub": "With Details and Precision.",
+    "description": "Bring your vision to life with me, from design to launch, in record time.",
+    "viewProjects": "View Projects",
+    "scheduleCall": "Schedule a Call"
+  },
+  "showcase": {
+    "tag": "Selected Work",
+    "title": "Featured Projects",
+    "viewAll": "View All Projects",
+    "emptyTitle": "Curating Excellence",
+    "emptyDesc": "I'm currently updating my portfolio with my latest case studies. Great work takes time to showcase properly.",
+    "getInTouch": "Get in Touch"
+  },
+  "about": {
+    "headline": "I believe in the power of",
+    "italic1": "invisible design",
+    "and": "and",
+    "italic2": "flawless execution",
+    "description": "Hi, I'm <strong>Nauval Dhonand Sidiq</strong>, a web developer based in <strong>Banda Aceh</strong>. By bridging the gap between aesthetics and engineering, I build digital experiences that are blazingly fast, deeply intuitive, and utterly memorable.",
+    "stat1Label": "Projects Shipped",
+    "stat2Suffix": "YRS",
+    "stat2Label": "Experience",
+    "stat3Label": "Satisfaction"
+  },
+  "services": {
+    "title": "What I Do",
+    "subtitle": "Crafting digital experiences with precision, passion, and performance.",
+    "emptyTitle": "Refining Service Offerings",
+    "emptyDesc": "I'm currently defining my core service packages to better serve your needs. Check back soon."
+  },
+  "choose": {
+    "title": "Why Me?",
+    "subtitle": "Beyond code. I bring a product mindset and pixel perfection to every project."
+  },
+  "pricing": {
+    "title": "Simple Pricing",
+    "subtitle": "Transparent pricing with no hidden fees. Pay for what you need.",
+    "monthly": "Monthly",
+    "annually": "Annually",
+    "recommended": "Recommended",
+    "customQuote": "Custom Quote",
+    "footerNote": "All prices are starting points. Final quote depends on project scope."
+  },
+  "contact": {
+    "title": "Let's build",
+    "titleAccent": "something great.",
+    "description": "Have an idea in mind or a project that needs a developer? I'm always open to discussing product design work or partnership opportunities.",
+    "copied": "Copied to clipboard!",
+    "scheduleCall": "Schedule a Call",
+    "followMe": "Follow Me"
+  },
+  "footer": {
+    "title": "Let's talk",
+    "description": "Have an idea in mind or a project that needs a developer? I'm always open to discussing product design work or partnership opportunities.",
+    "sitemap": "Sitemap",
+    "socials": "Socials",
+    "rights": "All rights reserved.",
+    "credit": "Designed with precise details",
+    "navHome": "Home",
+    "navProjects": "Projects",
+    "navServices": "Services",
+    "navPricing": "Pricing"
+  },
+  "cookie": {
+    "title": "Cookie Preferences",
+    "description": "This website uses cookies to enhance user experience and analyze traffic. By clicking \"Accept\", you consent to the use of cookies for these purposes.",
+    "policy": "Privacy Policy",
+    "accept": "Accept",
+    "decline": "Decline"
+  }
+}

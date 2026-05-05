@@ -10,9 +10,32 @@ import { WhyChooseMe } from "@/components/section/choose";
 import { Footer } from "@/components/section/footer";
 import { useSmoothScroll } from "@/hooks/use-smooth-scroll";
 import { SeoHead } from "@/components/SeoHead";
+import { LocaleProvider } from "@/context/LocaleContext";
 
 
-export default function Home({ projects, services, pricings, chooses }: { projects: any[], services: any[], pricings: any[], chooses: any[] }) {
+import { useLocale } from "@/context/LocaleContext";
+
+const AppContent = ({ projects, services, pricings, chooses, isScrolled }: any) => {
+    const { locale } = useLocale();
+    return (
+        <>
+            <SeoHead title="Home" />
+            <Navbar isScrolled={isScrolled} />
+            <main>
+                <Hero />
+                <Showcase projects={projects[locale] || projects.id || []} />
+                <About />
+                <Services services={services[locale] || services.id || []} />
+                <WhyChooseMe reasons={chooses[locale] || chooses.id || []} />
+                <Pricing plans={pricings[locale] || pricings.id || []} />
+            </main>
+            <CookieConsentBanner />
+            <Footer />
+        </>
+    );
+};
+
+export default function Home(props: any) {
     const [isScrolled, setIsScrolled] = useState(false);
     useSmoothScroll();
 
@@ -22,19 +45,8 @@ export default function Home({ projects, services, pricings, chooses }: { projec
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
     return (
-        <>
-            <SeoHead title="Home" />
-            <Navbar isScrolled={isScrolled} />
-            <main>
-                <Hero />
-                <Showcase projects={projects} />
-                <About />
-                <Services services={services} />
-                <WhyChooseMe reasons={chooses} />
-                <Pricing plans={pricings} />
-            </main>
-            <CookieConsentBanner />
-            <Footer />
-        </>
+        <LocaleProvider>
+            <AppContent {...props} isScrolled={isScrolled} />
+        </LocaleProvider>
     );
 }

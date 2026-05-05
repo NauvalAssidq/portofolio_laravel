@@ -1,12 +1,14 @@
 import React, { useState, useEffect, useRef } from "react";
 import { cn } from "@/lib/utils";
 import { Copy, CheckCircle2, ArrowRight, Github, Linkedin, Twitter, Mail } from "lucide-react";
+import { useLocale } from "@/context/LocaleContext";
 
 export const Contact = () => {
     const sectionRef = useRef<HTMLElement>(null);
     const [isInView, setIsInView] = useState(false);
     const [copied, setCopied] = useState(false);
     const email = "nauvalsidiq0427@gmail.com";
+    const { t } = useLocale();
 
     useEffect(() => {
         const observer = new IntersectionObserver(
@@ -57,14 +59,14 @@ export const Contact = () => {
                             
                             <div className="flex flex-col text-left">
                                 <h2 className="font-serif text-5xl sm:text-6xl lg:text-7xl text-white mb-6 leading-tight tracking-tight">
-                                    Let's build <br />
+                                    {t.contact.title} <br />
                                     <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-cyan-400">
-                                        something great.
+                                        {t.contact.titleAccent}
                                     </span>
                                 </h2>
 
                                 <p className="text-lg sm:text-xl text-gray-400 max-w-lg leading-relaxed mb-8 lg:mb-0">
-                                    Have an idea in mind or a project that needs a developer? I'm always open to discussing product design work or partnership opportunities.
+                                    {t.contact.description}
                                 </p>
                             </div>
 
@@ -76,7 +78,7 @@ export const Contact = () => {
                                     >
                                         <div className="flex items-center gap-3">
                                             {copied ? <CheckCircle2 className="w-5 h-5 text-green-600" /> : <Mail className="w-5 h-5" />}
-                                            <span className="text-base sm:text-lg">{copied ? "Copied to clipboard!" : email}</span>
+                                            <span className="text-base sm:text-lg">{copied ? t.contact.copied : email}</span>
                                         </div>
                                         {!copied && (
                                             <div className="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center group-hover:bg-gray-200 transition-colors">
@@ -89,7 +91,7 @@ export const Contact = () => {
                                         href="mailto:nauvalsidiq0427@gmail.com" 
                                         className="group flex items-center justify-between w-full px-8 py-5 rounded-2xl bg-gray-800/50 text-white border border-gray-700 hover:border-gray-500 hover:bg-gray-800 transition-all duration-300 backdrop-blur-sm"
                                     >
-                                        <span className="text-base sm:text-lg font-medium">Schedule a Call</span>
+                                        <span className="text-base sm:text-lg font-medium">{t.contact.scheduleCall}</span>
                                         <div className="w-8 h-8 rounded-full bg-gray-700/50 flex items-center justify-center group-hover:bg-gray-600 transition-colors">
                                             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                                         </div>
@@ -99,7 +101,7 @@ export const Contact = () => {
                                 <div className="w-full h-px bg-gradient-to-r from-gray-800 via-gray-700 to-gray-800 my-2" />
 
                                 <div className="flex items-center justify-start gap-4">
-                                    <span className="text-sm font-medium text-gray-500 uppercase tracking-wider mr-2">Follow Me</span>
+                                    <span className="text-sm font-medium text-gray-500 uppercase tracking-wider mr-2">{t.contact.followMe}</span>
                                     {socials.map((social) => (
                                         <a
                                             key={social.name}

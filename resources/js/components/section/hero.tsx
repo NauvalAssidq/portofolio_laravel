@@ -5,11 +5,12 @@ import { languages, LanguageMarquee } from "@/components/hero/languagemq";
 import { cn } from "@/lib/utils";
 import { Highlighter } from "@/components/ui/highlighter";
 import { InteractiveGrid } from "@/components/hero/InteractiveGrid";
-import { MagneticText } from "@/components/ui/MagneticText";
+import { useLocale } from "@/context/LocaleContext";
 
 export default function Hero() {
     const sectionRef = useRef<HTMLElement | null>(null);
     const [isInView, setIsInView] = useState(false);
+    const { t } = useLocale();
 
     useEffect(() => {
         const observer = new IntersectionObserver(
@@ -57,41 +58,37 @@ export default function Hero() {
                                 <span className="absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75 animate-ping" />
                                 <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500" />
                             </span>
-                            <span className="text-gray-600">Currently open to work, DM me!</span>
+                            <span className="text-gray-600">{t.hero.badge}</span>
                         </div>
                     </div>
-                    <MagneticText strength={30}>
-                        <h1
-                            className={cn(
-                                "font-serif text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-gray-900 mb-4 text-center leading-[1.1]",
-                                "transition-all duration-1000 ease-out",
-                                isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-                            )}
-                            style={{ transitionDelay: isInView ? '400ms' : '0ms' }}
-                        >
-                            Craft Stunning{" "}
-                            <Highlighter action="circle" color="#87CEFA" isView={!isInView}>
-                                Apps
-                            </Highlighter>
-                            {" "}  &amp; {" "}
-                            <Highlighter action="highlight" color="#87CEFA" isView={!isInView}>
-                                Websites
-                            </Highlighter>
-                        </h1>
-                    </MagneticText>
+                    <h1
+                        className={cn(
+                            "font-serif text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-gray-900 mb-4 text-center leading-[1.1]",
+                            "transition-all duration-1000 ease-out",
+                            isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+                        )}
+                        style={{ transitionDelay: isInView ? '400ms' : '0ms' }}
+                    >
+                        {t.hero.headline1}{" "}
+                        <Highlighter action="circle" color="#87CEFA" isView={!isInView}>
+                            {t.hero.headlineSuffix}
+                        </Highlighter>
+                        {" "}  &amp; {" "}
+                        <Highlighter action="highlight" color="#87CEFA" isView={!isInView}>
+                            {t.hero.headline2}
+                        </Highlighter>
+                    </h1>
                     
-                    <MagneticText strength={20}>
-                        <h2
-                            className={cn(
-                                "font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-indigo-600 mb-6 sm:mb-8 text-center leading-[1.1]",
-                                "transition-all duration-1000 ease-out",
-                                isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-                            )}
-                            style={{ transitionDelay: isInView ? '600ms' : '0ms' }}
-                        >
-                            With Details and Precision.
-                        </h2>
-                    </MagneticText>
+                    <h2
+                        className={cn(
+                            "font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-indigo-600 mb-6 sm:mb-8 text-center leading-[1.1]",
+                            "transition-all duration-1000 ease-out",
+                            isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+                        )}
+                        style={{ transitionDelay: isInView ? '600ms' : '0ms' }}
+                    >
+                        {t.hero.sub}
+                    </h2>
                     <p
                         className={cn(
                             "text-lg sm:text-xl text-gray-500 mb-10 max-w-xl text-center mx-auto leading-relaxed",
@@ -100,7 +97,7 @@ export default function Hero() {
                         )}
                         style={{ transitionDelay: isInView ? '800ms' : '0ms' }}
                     >
-                        Bring your vision to life with me, from design to launch, in record time.
+                        {t.hero.description}
                     </p>
                     <div
                         className={cn(
@@ -114,14 +111,14 @@ export default function Hero() {
                             href="#showcase"
                             className="group inline-flex items-center justify-center gap-3 py-4 px-8 rounded-full text-base font-medium text-white bg-gray-900 hover:bg-gray-800 transition-colors duration-200"
                         >
-                            <span>View Projects</span>
+                            <span>{t.hero.viewProjects}</span>
                             <ArrowRight size={18} className="transition-transform duration-200 group-hover:translate-x-1" />
                         </a>
                         <a
                             href="#contact"
                             className="group inline-flex items-center justify-center gap-3 py-4 px-8 rounded-full text-base font-medium text-gray-600 bg-white border border-gray-200 hover:border-gray-300 transition-colors duration-200"
                         >
-                            <span>Schedule a Call</span>
+                            <span>{t.hero.scheduleCall}</span>
                             <ArrowRight size={18} className="transition-transform duration-200 group-hover:translate-x-1" />
                         </a>
                     </div>

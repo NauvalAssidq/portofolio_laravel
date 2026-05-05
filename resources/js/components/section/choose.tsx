@@ -2,13 +2,8 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import { cn } from "@/lib/utils";
-import {
-    Eye,
-    ScanSearch,
-    MessagesSquare,
-    Code2,
-    CheckCircle
-} from "lucide-react";
+import { Eye, ScanSearch, MessagesSquare, Code2, CheckCircle } from "lucide-react";
+import { useLocale } from "@/context/LocaleContext";
 
 const useSpotlight = (divRef: React.RefObject<HTMLDivElement | null>) => {
     const [position, setPosition] = useState({ x: 0, y: 0 });
@@ -144,6 +139,7 @@ const getBentoSpan = (index: number, total: number) => {
 export const WhyChooseMe = ({ reasons = [] }: { reasons: Reason[] }) => {
     const sectionRef = useRef<HTMLDivElement>(null);
     const [isInView, setIsInView] = useState(false);
+    const { t } = useLocale();
 
     useEffect(() => {
         const observer = new IntersectionObserver(([entry]) => {
@@ -174,10 +170,10 @@ export const WhyChooseMe = ({ reasons = [] }: { reasons: Reason[] }) => {
                         isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
                     )}>
                         <h2 className="font-serif text-5xl md:text-7xl text-gray-900 leading-[0.9]">
-                            Why Me?
+                            {t.choose.title}
                         </h2>
                         <p className="text-gray-500 max-w-md text-lg">
-                            Beyond code. I bring a product mindset and pixel perfection to every project.
+                            {t.choose.subtitle}
                         </p>
                     </div>
                 </div>

@@ -1,6 +1,7 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { motion, useScroll, useTransform, AnimatePresence, useMotionValue, useSpring } from "framer-motion";
 import { cn } from "@/lib/utils";
+import { useLocale } from "@/context/LocaleContext";
 
 interface Project {
     id: number;
@@ -28,10 +29,7 @@ const FloatingImage = ({
                 <motion.div
                     className="fixed top-0 left-0 pointer-events-none z-[60] hidden md:block"
                     initial={{ opacity: 0, scale: 0.8 }}
-                    animate={{
-                        opacity: 1,
-                        scale: 1,
-                    }}
+                    animate={{ opacity: 1, scale: 1 }}
                     exit={{ opacity: 0, scale: 0.8 }}
                     style={{ x, y }}
                     transition={{
@@ -199,6 +197,7 @@ const PLACEHOLDER_IMAGE = "https://images.unsplash.com/photo-1594322436404-5a052
 export const Showcase = ({ projects = [] }: { projects: Project[] }) => {
     const [hoveredProject, setHoveredProject] = useState<Project | null>(null);
     const sectionRef = useRef<HTMLElement>(null);
+    const { t } = useLocale();
 
     const springConfig = { damping: 20, stiffness: 300, mass: 0.5 };
     const mouseX = useMotionValue(0);
@@ -242,10 +241,10 @@ export const Showcase = ({ projects = [] }: { projects: Project[] }) => {
                     transition={{ duration: 1.0 }}
                 >
                     <span className="text-indigo-600 font-medium text-sm uppercase tracking-wider mb-4 block">
-                        Selected Work
+                        {t.showcase.tag}
                     </span>
                     <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl text-gray-900">
-                        Featured Projects
+                        {t.showcase.title}
                     </h2>
                 </motion.div>
 
@@ -276,13 +275,12 @@ export const Showcase = ({ projects = [] }: { projects: Project[] }) => {
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
                                 </svg>
                             </div>
-                            <h3 className="font-serif text-3xl text-gray-900 mb-4">Curating Excellence</h3>
+                            <h3 className="font-serif text-3xl text-gray-900 mb-4">{t.showcase.emptyTitle}</h3>
                             <p className="text-gray-500 max-w-md mx-auto mb-8 text-lg leading-relaxed">
-                                I'm currently updating my portfolio with my latest case studies.
-                                Great work takes time to showcase properly.
+                                {t.showcase.emptyDesc}
                             </p>
                             <a href="mailto:nauvalsidiq0427@gmail.com" className="inline-flex items-center justify-center px-8 py-3 bg-gray-900 text-white rounded-full hover:bg-gray-800 transition-colors font-medium">
-                                Get in Touch
+                                {t.showcase.getInTouch}
                             </a>
                         </motion.div>
                     )}
@@ -318,13 +316,12 @@ export const Showcase = ({ projects = [] }: { projects: Project[] }) => {
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
                                 </svg>
                             </div>
-                            <h3 className="font-serif text-3xl text-gray-900 mb-4">Curating Excellence</h3>
+                            <h3 className="font-serif text-3xl text-gray-900 mb-4">{t.showcase.emptyTitle}</h3>
                             <p className="text-gray-500 max-w-md mx-auto mb-8 text-lg leading-relaxed">
-                                I'm currently updating my portfolio with my latest case studies.
-                                Great work takes time to showcase properly.
+                                {t.showcase.emptyDesc}
                             </p>
                             <a href="mailto:nauvalsidiq0427@gmail.com" className="inline-flex items-center justify-center px-8 py-3 bg-gray-900 text-white rounded-full hover:bg-gray-800 transition-colors font-medium">
-                                Get in Touch
+                                {t.showcase.getInTouch}
                             </a>
                         </motion.div>
                     )}
@@ -341,7 +338,7 @@ export const Showcase = ({ projects = [] }: { projects: Project[] }) => {
                         href="#showcase"
                         className="inline-flex items-center gap-3 text-gray-600 hover:text-indigo-600 transition-colors group"
                     >
-                        <span className="text-lg">View All Projects</span>
+                        <span className="text-lg">{t.showcase.viewAll}</span>
                         <span className="w-10 h-10 rounded-full border border-current flex items-center justify-center group-hover:bg-indigo-600 group-hover:border-indigo-600 group-hover:text-white transition-all">
                             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />

@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { cn } from "@/lib/utils";
 import { Check, ArrowRight } from "lucide-react";
+import { useLocale } from "@/context/LocaleContext";
 
 
 interface PricingPlan {
@@ -21,6 +22,7 @@ export const Pricing = ({ plans = [] }: { plans: PricingPlan[] }) => {
     const [isAnnual, setIsAnnual] = useState(true);
     const [isInView, setIsInView] = useState(false);
     const sectionRef = useRef<HTMLElement | null>(null);
+    const { t } = useLocale();
 
     useEffect(() => {
         const observer = new IntersectionObserver(
@@ -58,10 +60,10 @@ export const Pricing = ({ plans = [] }: { plans: PricingPlan[] }) => {
                     )}
                 >
                     <h2 className="font-serif text-4xl sm:text-5xl lg:text-6xl text-gray-900 mb-6 leading-[1.1] tracking-tight">
-                        Simple Pricing
+                        {t.pricing.title}
                     </h2>
                     <p className="text-lg sm:text-xl text-gray-500 max-w-xl mx-auto leading-relaxed mb-10">
-                        Transparent pricing with no hidden fees. Pay for what you need.
+                        {t.pricing.subtitle}
                     </p>
 
                     <div className="inline-flex items-center gap-4 p-1 bg-gray-100 rounded-full">
@@ -72,7 +74,7 @@ export const Pricing = ({ plans = [] }: { plans: PricingPlan[] }) => {
                                 !isAnnual ? "bg-white text-gray-900 shadow-sm" : "text-gray-500"
                             )}
                         >
-                            Monthly
+                            {t.pricing.monthly}
                         </button>
                         <button
                             onClick={() => setIsAnnual(true)}
@@ -81,7 +83,7 @@ export const Pricing = ({ plans = [] }: { plans: PricingPlan[] }) => {
                                 isAnnual ? "bg-white text-gray-900 shadow-sm" : "text-gray-500"
                             )}
                         >
-                            Annually
+                            {t.pricing.annually}
                             <span className="ml-2 text-xs text-indigo-600 font-semibold">-20%</span>
                         </button>
                     </div>
@@ -103,16 +105,14 @@ export const Pricing = ({ plans = [] }: { plans: PricingPlan[] }) => {
                                 )}
                                 style={{ transitionDelay: `${index * 200}ms` }}
                             >
-                                {/* Recommended Badge */}
                                 {plan.is_popular && (
                                     <div className="absolute -top-3 left-1/2 -translate-x-1/2">
                                         <span className="px-3 py-1 bg-indigo-600 text-white text-xs font-semibold rounded-full">
-                                            Recommended
+                                            {t.pricing.recommended}
                                         </span>
                                     </div>
                                 )}
 
-                                {/* Plan Name */}
                                 <h3 className={cn(
                                     "text-lg font-semibold mb-2 tracking-tight",
                                     plan.is_popular ? "text-white" : "text-gray-900"
@@ -120,7 +120,6 @@ export const Pricing = ({ plans = [] }: { plans: PricingPlan[] }) => {
                                     {plan.name}
                                 </h3>
 
-                                {/* Description */}
                                 <p className={cn(
                                     "text-sm mb-6",
                                     plan.is_popular ? "text-gray-400" : "text-gray-500"
@@ -128,7 +127,6 @@ export const Pricing = ({ plans = [] }: { plans: PricingPlan[] }) => {
                                     {plan.description}
                                 </p>
 
-                                {/* Price */}
                                 <div className="mb-8">
                                     {price ? (
                                         <div className="flex items-baseline gap-1">
@@ -152,12 +150,11 @@ export const Pricing = ({ plans = [] }: { plans: PricingPlan[] }) => {
                                             "text-3xl font-serif tracking-tight",
                                             plan.is_popular ? "text-white" : "text-gray-900"
                                         )}>
-                                            Custom Quote
+                                            {t.pricing.customQuote}
                                         </span>
                                     )}
                                 </div>
 
-                                {/* CTA Button */}
                                 <a
                                     href={plan.cta_link || "#contact"}
                                     className={cn(
@@ -171,7 +168,6 @@ export const Pricing = ({ plans = [] }: { plans: PricingPlan[] }) => {
                                     <ArrowRight size={16} className="transition-transform duration-300 group-hover:translate-x-1" />
                                 </a>
 
-                                {/* Features */}
                                 <ul className="space-y-3 mt-auto">
                                     {plan.features.map((feature, i) => (
                                         <li key={i} className="flex items-start gap-3">
@@ -193,7 +189,6 @@ export const Pricing = ({ plans = [] }: { plans: PricingPlan[] }) => {
                     })}
                 </div>
 
-                {/* Footer Note */}
                 <p
                     className={cn(
                         "text-center text-sm text-gray-400 mt-12 transition-all duration-1000",
@@ -201,7 +196,7 @@ export const Pricing = ({ plans = [] }: { plans: PricingPlan[] }) => {
                     )}
                     style={{ transitionDelay: "600ms" }}
                 >
-                    All prices are starting points. Final quote depends on project scope.
+                    {t.pricing.footerNote}
                 </p>
             </div>
         </section>

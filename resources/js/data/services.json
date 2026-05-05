@@ -1,44 +1,60 @@
-[
-    {
-        "id": 1,
-        "title": "Web Development",
-        "description": "Building fast, scalable, and secure websites using modern technologies like React, Laravel, and Node.js. I focus on performance and SEO optimization.",
-        "image": "https:\/\/images.unsplash.com\/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80&w=1200",
-        "specialities": [
-            "React",
-            "Laravel",
-            "TypeScript",
-            "Tailwind CSS"
-        ],
-        "created_at": "2026-01-02T21:24:27.000000Z",
-        "updated_at": "2026-01-02T21:24:27.000000Z"
-    },
-    {
-        "id": 2,
-        "title": "UI\/UX Design",
-        "description": "Creating intuitive and visually appealing user interfaces. I design with the user in mind, ensuring a seamless and enjoyable experience.",
-        "image": "https:\/\/images.unsplash.com\/photo-1611162617474-5b21e879e113?auto=format&fit=crop&q=80&w=1200",
-        "specialities": [
-            "Figma",
-            "Prototyping",
-            "User Research",
-            "Wireframing"
-        ],
-        "created_at": "2026-01-02T21:24:27.000000Z",
-        "updated_at": "2026-01-02T21:24:27.000000Z"
-    },
-    {
-        "id": 3,
-        "title": "Mobile App Development",
-        "description": "Developing cross-platform mobile applications that provide a native-like experience on both iOS and Android devices.",
-        "image": "https:\/\/images.unsplash.com\/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&q=80&w=1200",
-        "specialities": [
-            "React Native",
-            "Expo",
-            "iOS",
-            "Android"
-        ],
-        "created_at": "2026-01-02T21:24:27.000000Z",
-        "updated_at": "2026-01-02T21:24:27.000000Z"
-    }
-]
+{
+    "en": [
+        {
+            "id": 1,
+            "title": "Web Development",
+            "description": "Building fast, scalable, and secure websites using modern technologies like React, Laravel, and Node.js. I focus on performance and SEO optimization.",
+            "image": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80&w=1200",
+            "specialities": ["React", "Laravel", "TypeScript", "Tailwind CSS"],
+            "created_at": "2026-01-02T21:24:27.000000Z",
+            "updated_at": "2026-01-02T21:24:27.000000Z"
+        },
+        {
+            "id": 2,
+            "title": "UI/UX Design",
+            "description": "Creating intuitive and visually appealing user interfaces. I design with the user in mind, ensuring a seamless and enjoyable experience.",
+            "image": "https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&q=80&w=1200",
+            "specialities": ["Figma", "Prototyping", "User Research", "Wireframing"],
+            "created_at": "2026-01-02T21:24:27.000000Z",
+            "updated_at": "2026-01-02T21:24:27.000000Z"
+        },
+        {
+            "id": 3,
+            "title": "Mobile App Development",
+            "description": "Developing cross-platform mobile applications that provide a native-like experience on both iOS and Android devices.",
+            "image": "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&q=80&w=1200",
+            "specialities": ["React Native", "Expo", "iOS", "Android"],
+            "created_at": "2026-01-02T21:24:27.000000Z",
+            "updated_at": "2026-01-02T21:24:27.000000Z"
+        }
+    ],
+    "id": [
+        {
+            "id": 1,
+            "title": "Pengembangan Web",
+            "description": "Membangun website yang cepat, skalabel, dan aman menggunakan teknologi modern seperti React, Laravel, dan Node.js. Saya berfokus pada performa dan optimasi SEO.",
+            "image": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80&w=1200",
+            "specialities": ["React", "Laravel", "TypeScript", "Tailwind CSS"],
+            "created_at": "2026-01-02T21:24:27.000000Z",
+            "updated_at": "2026-01-02T21:24:27.000000Z"
+        },
+        {
+            "id": 2,
+            "title": "Desain UI/UX",
+            "description": "Menciptakan antarmuka pengguna yang intuitif dan menarik secara visual. Saya mendesain dengan mempertimbangkan pengalaman pengguna yang mulus dan menyenangkan.",
+            "image": "https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&q=80&w=1200",
+            "specialities": ["Figma", "Prototyping", "User Research", "Wireframing"],
+            "created_at": "2026-01-02T21:24:27.000000Z",
+            "updated_at": "2026-01-02T21:24:27.000000Z"
+        },
+        {
+            "id": 3,
+            "title": "Pengembangan Aplikasi Mobile",
+            "description": "Mengembangkan aplikasi seluler lintas platform yang memberikan pengalaman sekelas aplikasi native di perangkat iOS maupun Android.",
+            "image": "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&q=80&w=1200",
+            "specialities": ["React Native", "Expo", "iOS", "Android"],
+            "created_at": "2026-01-02T21:24:27.000000Z",
+            "updated_at": "2026-01-02T21:24:27.000000Z"
+        }
+    ]
+}

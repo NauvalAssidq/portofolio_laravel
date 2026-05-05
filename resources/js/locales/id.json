@@ -1,0 +1,87 @@
+{
+  "nav": {
+    "showcase": "Portofolio",
+    "about": "Tentang",
+    "services": "Layanan",
+    "pricing": "Harga",
+    "contact": "Kontak",
+    "cta": "Mulai Sekarang",
+    "scheduleCall": "Jadwalkan Meeting"
+  },
+  "hero": {
+    "badge": "Tersedia untuk proyek baru, mari diskusi!",
+    "headline1": "Membangun",
+    "headlineAnd": "&",
+    "headline2": "Website",
+    "headlineSuffix": "Aplikasi",
+    "sub": "Dengan Detail dan Presisi Tinggi.",
+    "description": "Mari wujudkan ide Anda jadi nyata—dari sekadar konsep hingga siap rilis, dengan kualitas terbaik.",
+    "viewProjects": "Lihat Portofolio",
+    "scheduleCall": "Jadwalkan Meeting"
+  },
+  "showcase": {
+    "tag": "Karya Terpilih",
+    "title": "Proyek Terbaik Saya",
+    "viewAll": "Lihat Semua Proyek",
+    "emptyTitle": "Sedang Menyusun Karya Terbaik",
+    "emptyDesc": "Portofolio sedang dalam proses update dengan studi kasus terbaru. Butuh waktu untuk menampilkan hasil karya yang benar-benar berkualitas.",
+    "getInTouch": "Hubungi Saya"
+  },
+  "about": {
+    "headline": "Saya percaya pada kekuatan",
+    "italic1": "desain yang intuitif",
+    "and": "dan",
+    "italic2": "eksekusi yang matang",
+    "description": "Halo! Saya <strong>Nauval Dhonand Sidiq</strong>, seorang web developer dari <strong>Banda Aceh</strong>. Dengan menggabungkan sisi estetika dan teknis, saya menciptakan pengalaman digital yang cepat, mudah digunakan, dan berkesan.",
+    "stat1Label": "Proyek Selesai",
+    "stat2Suffix": "Thn",
+    "stat2Label": "Pengalaman",
+    "stat3Label": "Kepuasan"
+  },
+  "services": {
+    "title": "Apa Saja yang Saya Kerjakan",
+    "subtitle": "Membangun produk digital dengan tingkat presisi, dedikasi, dan performa tinggi.",
+    "emptyTitle": "Sedang Memperbarui Layanan",
+    "emptyDesc": "Saya sedang menyusun ulang paket layanan agar bisa memberikan solusi yang lebih pas untuk kebutuhan Anda. Silakan cek lagi nanti."
+  },
+  "choose": {
+    "title": "Kenapa Harus Saya?",
+    "subtitle": "Lebih dari sekadar nulis kode. Saya juga memikirkan dari sudut pandang produk dan sangat perfeksionis dalam urusan tampilan."
+  },
+  "pricing": {
+    "title": "Pilihan Harga",
+    "subtitle": "Transparan, tanpa biaya tersembunyi. Anda hanya membayar apa yang memang Anda butuhkan.",
+    "monthly": "Bulanan",
+    "annually": "Tahunan",
+    "recommended": "Paling Diminati",
+    "customQuote": "Harga Menyesuaikan",
+    "footerNote": "Semua harga di atas adalah estimasi awal. Biaya akhir akan menyesuaikan dengan skala dan tingkat kesulitan proyek."
+  },
+  "contact": {
+    "title": "Mari berkolaborasi dan",
+    "titleAccent": "ciptakan hal luar biasa.",
+    "description": "Punya ide brilian atau sedang cari developer untuk mengeksekusi proyek Anda? Saya selalu terbuka untuk diajak diskusi atau sekadar ngobrol soal peluang kerja sama.",
+    "copied": "Berhasil disalin!",
+    "scheduleCall": "Atur Jadwal Meeting",
+    "followMe": "Temukan Saya"
+  },
+  "footer": {
+    "title": "Mari Ngobrol",
+    "description": "Punya ide atau proyek seru? Jangan ragu buat reach out. Saya selalu terbuka buat diskusi atau kerja sama.",
+    "sitemap": "Menu Navigasi",
+    "socials": "Terhubung",
+    "rights": "Hak cipta dilindungi.",
+    "credit": "Dibuat dengan penuh ketelitian",
+    "navHome": "Beranda",
+    "navProjects": "Proyek",
+    "navServices": "Layanan",
+    "navPricing": "Harga"
+  },
+  "cookie": {
+    "title": "Pengaturan Cookie",
+    "description": "Website ini pakai cookie biar performa dan pengalaman Anda makin maksimal. Dengan klik \"Setuju\", berarti Anda oke dengan penggunaan cookie ini.",
+    "policy": "Kebijakan Privasi",
+    "accept": "Setuju",
+    "decline": "Tolak"
+  }
+}

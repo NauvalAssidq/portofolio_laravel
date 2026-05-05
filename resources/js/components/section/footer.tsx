@@ -1,11 +1,13 @@
 import React, { useState, useEffect, useRef } from "react";
 import { cn } from "@/lib/utils";
 import { Github, Linkedin, Twitter, Dribbble, ArrowUpRight } from "lucide-react";
+import { useLocale } from "@/context/LocaleContext";
 
 export const Footer = () => {
     const currentYear = new Date().getFullYear();
     const sectionRef = useRef<HTMLElement>(null);
     const [isInView, setIsInView] = useState(false);
+    const { t } = useLocale();
 
     useEffect(() => {
         const observer = new IntersectionObserver(
@@ -27,16 +29,16 @@ export const Footer = () => {
 
     const navigation = {
         main: [
-            { name: "Home", href: "#" },
-            { name: "Projects", href: "#showcase" },
-            { name: "Services", href: "#services" },
-            { name: "Pricing", href: "#pricing" },
+            { name: t.footer.navHome,     href: "#" },
+            { name: t.footer.navProjects, href: "#showcase" },
+            { name: t.footer.navServices, href: "#services" },
+            { name: t.footer.navPricing,  href: "#pricing" },
         ],
         social: [
-            { name: "GitHub", href: "#", icon: Github },
-            { name: "LinkedIn", href: "#", icon: Linkedin },
-            { name: "Twitter", href: "#", icon: Twitter },
-            { name: "Dribbble", href: "#", icon: Dribbble },
+            { name: "GitHub",   href: "#", icon: Github   },
+            { name: "LinkedIn", href: "#", icon: Linkedin  },
+            { name: "Twitter",  href: "#", icon: Twitter   },
+            { name: "Dribbble", href: "#", icon: Dribbble  },
         ],
     };
 
@@ -50,6 +52,16 @@ export const Footer = () => {
             <div className="absolute bottom-0 left-0 -ml-32 -mb-32 w-[500px] h-[500px] rounded-full bg-blue-500/10 blur-[100px] pointer-events-none" />
             <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-10 mix-blend-overlay pointer-events-none" />
 
+            <div 
+                className={cn(
+                    "absolute left-1/2 -translate-x-1/2 bottom-[-2%] text-[16vw] font-serif font-bold text-gray-900/60 leading-none whitespace-nowrap pointer-events-none select-none z-0",
+                    "transition-all duration-1000 delay-300 ease-out",
+                    isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+                )}
+            >
+                NAUVAL
+            </div>
+
             <div className="relative z-10 max-w-7xl mx-auto px-6">
                 
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-8 mb-32">
@@ -59,11 +71,11 @@ export const Footer = () => {
                         isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
                     )}>
                         <h2 className="font-serif text-6xl sm:text-7xl md:text-8xl lg:text-9xl text-white leading-[0.9] tracking-tighter mb-8">
-                            Let's talk <br className="hidden sm:block" />
+                            {t.footer.title} <br className="hidden sm:block" />
                         </h2>
                         
                         <p className="text-lg sm:text-xl text-gray-400 max-w-lg leading-relaxed mb-12">
-                            Have an idea in mind or a project that needs a developer? I'm always open to discussing product design work or partnership opportunities.
+                            {t.footer.description}
                         </p>
 
                         <a 
@@ -81,7 +93,7 @@ export const Footer = () => {
                     )}>
                         <div className="flex flex-col gap-4">
                             <span className="text-sm font-semibold text-gray-500 tracking-wider uppercase mb-2">
-                                Sitemap
+                                {t.footer.sitemap}
                             </span>
                             {navigation.main.map((item) => (
                                 <a
@@ -96,7 +108,7 @@ export const Footer = () => {
 
                         <div className="flex flex-col gap-4">
                             <span className="text-sm font-semibold text-gray-500 tracking-wider uppercase mb-2">
-                                Socials
+                                {t.footer.socials}
                             </span>
                             {navigation.social.map((item) => (
                                 <a
@@ -113,19 +125,16 @@ export const Footer = () => {
                 </div>
 
                 <div className={cn(
-                    "relative border-t border-gray-800 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 transition-all duration-1000 delay-500 ease-out",
+                    "relative border-t border-gray-800 pt-8 pb-4 flex flex-col md:flex-row items-center justify-between gap-4 transition-all duration-1000 delay-500 ease-out",
                     isInView ? "opacity-100" : "opacity-0"
                 )}>
-                    <div className="absolute left-1/2 -translate-x-1/2 bottom-0 text-[15vw] font-serif font-bold text-gray-900 leading-none whitespace-nowrap pointer-events-none -mb-4 sm:-mb-8 md:-mb-12 z-0">
-                        NAUVAL
-                    </div>
 
                     <p className="text-sm text-gray-500 relative z-10 w-full md:w-auto text-center md:text-left">
-                        &copy; {currentYear} Nauval Assidq. All rights reserved.
+                        &copy; {currentYear} Nauval Assidq. {t.footer.rights}
                     </p>
                     
                     <div className="flex items-center justify-center md:justify-end gap-2 text-gray-500 text-sm relative z-10 w-full md:w-auto">
-                        <span>Designed with precise details</span>
+                        <span>{t.footer.credit}</span>
                     </div>
                 </div>
 
