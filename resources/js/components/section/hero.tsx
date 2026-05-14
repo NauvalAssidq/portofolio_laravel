@@ -1,10 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { ArrowRight } from "lucide-react";
-import { Marquee } from "@/components/ui/marquee";
-import { languages, LanguageMarquee } from "@/components/hero/languagemq";
 import { cn } from "@/lib/utils";
 import { Highlighter } from "@/components/ui/highlighter";
-import { InteractiveGrid } from "@/components/hero/InteractiveGrid";
 import { useLocale } from "@/context/LocaleContext";
 
 export default function Hero() {
@@ -33,18 +30,35 @@ export default function Hero() {
         };
     }, []);
 
-
-    const first = languages.slice(0, Math.ceil(languages.length / 2));
-    const second = languages.slice(Math.ceil(languages.length / 2));
-
     return (
         <section
             ref={sectionRef}
-            className="relative min-h-dvh flex items-center justify-center bg-[#fafafa] pt-32 pb-20 sm:py-28 px-4 sm:px-6 lg:px-8"
+            className="relative min-h-dvh flex items-center justify-center bg-[#fafafa] pt-32 pb-20 sm:py-28 px-4 sm:px-6 lg:px-8 overflow-hidden"
         >
-        <InteractiveGrid />
-        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-indigo-500/50 to-transparent" />
-            <div className="max-w-7xl mx-auto z-10 w-full">
+        
+        <div className="absolute inset-0 pointer-events-none overflow-hidden z-0">
+            <div className="absolute top-[-30%] left-[-20%] w-[140vw] h-[100vw] max-w-[1500px] max-h-[1000px] origin-center -rotate-12">
+                <div 
+                    className="w-full h-full animate-aurora-1 will-change-transform"
+                    style={{ background: 'radial-gradient(ellipse at center, rgba(96, 165, 250, 0.5) 0%, rgba(96, 165, 250, 0) 60%)' }}
+                />
+            </div>
+            <div className="absolute top-[10%] -right-[30%] w-[140vw] h-[100vw] max-w-[1500px] max-h-[1000px] origin-center rotate-12">
+                <div 
+                    className="w-full h-full animate-aurora-2 will-change-transform"
+                    style={{ background: 'radial-gradient(ellipse at center, rgba(125, 211, 252, 0.45) 0%, rgba(125, 211, 252, 0) 60%)' }}
+                />
+            </div>
+            <div className="absolute -bottom-[20%] left-[-20%] w-[150vw] h-[100vw] max-w-[1600px] max-h-[1000px] origin-center -rotate-6">
+                <div 
+                    className="w-full h-full animate-aurora-3 will-change-transform"
+                    style={{ background: 'radial-gradient(ellipse at center, rgba(59, 130, 246, 0.4) 0%, rgba(59, 130, 246, 0) 60%)' }}
+                />
+            </div>
+        </div>
+
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-indigo-500/50 to-transparent z-10" />
+            <div className="max-w-7xl mx-auto z-10 w-full relative">
                 <div className="text-center">
                     <div
                         className={cn(
@@ -130,10 +144,6 @@ export default function Hero() {
                         )}
                         style={{ transitionDelay: isInView ? '1200ms' : '0ms' }}
                     >
-                        <Marquee pauseOnHover className="[--duration:25s]">
-                            {first.map((l) => LanguageMarquee(l))}
-                            {second.map((l) => LanguageMarquee(l))}
-                        </Marquee>
                         <div className="pointer-events-none absolute inset-y-0 left-0 w-24 sm:w-32 bg-gradient-to-r from-[#fafafa] to-transparent z-10" />
                         <div className="pointer-events-none absolute inset-y-0 right-0 w-24 sm:w-32 bg-gradient-to-l from-[#fafafa] to-transparent z-10" />
                     </div>

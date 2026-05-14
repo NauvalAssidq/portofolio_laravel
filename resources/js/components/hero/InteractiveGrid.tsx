@@ -4,7 +4,6 @@ import { cn } from '@/lib/utils';
 export const InteractiveGrid = ({ className }: { className?: string }) => {
     return (
         <div className={cn("hidden sm:block absolute inset-0 pointer-events-none z-0", className)} style={{ overflow: 'visible' }}>
-            {/* Layer 1: Large radial blue beam/glow — the OUTER light, bleeds past section */}
             <div
                 className="absolute left-1/2 -translate-x-1/2"
                 style={{
@@ -15,7 +14,6 @@ export const InteractiveGrid = ({ className }: { className?: string }) => {
                 }}
             />
 
-            {/* Layer 2: Grid pattern — SMALLER, sits inside the beam */}
             <div
                 className="absolute left-1/2 -translate-x-1/2"
                 style={{
@@ -30,7 +28,6 @@ export const InteractiveGrid = ({ className }: { className?: string }) => {
                 }}
             />
 
-            {/* Layer 3: Intense core glow at the bottom edge, extends into next section */}
             <div
                 className="absolute left-1/2 -translate-x-1/2"
                 style={{

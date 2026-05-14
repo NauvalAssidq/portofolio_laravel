@@ -77,7 +77,6 @@ export default function Login() {
                         )}
                         style={{ transitionDelay: '300ms' }}
                     >
-                        {/* Email Input */}
                         <div className="group relative">
                             <Mail className={cn(
                                 "absolute left-6 top-[16px] h-5 w-5 pointer-events-none transition-colors",
@@ -104,7 +103,6 @@ export default function Login() {
                             )}
                         </div>
 
-                        {/* Password Input */}
                         <div className="group relative">
                             <Lock className={cn(
                                 "absolute left-6 top-[16px] h-5 w-5 pointer-events-none transition-colors",
@@ -138,7 +136,6 @@ export default function Login() {
                             )}
                         </div>
 
-                        {/* Remember Me and Forgot Password */}
                         <div className="flex items-center justify-between px-2">
                             <label className="flex items-center gap-2 cursor-pointer group">
                                 <div className="relative flex items-center">
@@ -169,7 +166,6 @@ export default function Login() {
                             </a>
                         </div>
 
-                        {/* Submit Button */}
                         <button
                             type="submit"
                             disabled={loading}
@@ -186,7 +182,6 @@ export default function Login() {
                         </button>
                     </form>
 
-                    {/* Footer */}
                     <div
                         className={cn(
                             "mt-12",
